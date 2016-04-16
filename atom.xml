@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-16T07:44:13.000Z</updated>
+  <updated>2016-04-16T03:54:04.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,36 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Hexo搭建个人博客那些水坑</title>
-    <link href="http://yoursite.com/2016/04/16/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%82%A3%E4%BA%9B%E6%B0%B4%E5%9D%91/"/>
-    <id>http://yoursite.com/2016/04/16/Hexo搭建个人博客那些水坑/</id>
-    <published>2016-04-16T06:53:57.000Z</published>
-    <updated>2016-04-16T07:44:13.000Z</updated>
-    
-    <content type="html">&lt;p&gt;安装的步骤就不在里说了,这里主要说一个过程中遇到的水坑,有用遇到别的问题可以在评论里反馈一下帮助更多的朋友.&lt;/p&gt;
-&lt;p&gt;推荐几个兄弟的博客&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.aswifter.com/2016/01/16/hexo-with-gitcafe/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.aswifter.com/2016/01/16/hexo-with-gitcafe/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://sunwhut.com/2015/10/30/buildBlog/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://sunwhut.com/2015/10/30/buildBlog/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;我收集到的一些水坑&lt;/p&gt;
-&lt;p&gt;1, repo:$&lt;a href=&quot;https://github.com/jsonwang/jsonwang.github.io.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/jsonwang/jsonwang.github.io.git&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;“$” 这里一定要有空格&lt;br&gt;后面的URL 地址也一定要这样的格式jsonwang换成你的github的用户名不是登录名&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;安装的步骤就不在里说了,这里主要说一个过程中遇到的水坑,有用遇到别的问题可以在评论里反馈一下帮助更多的朋友.&lt;/p&gt;
-&lt;p&gt;推荐几个兄弟的博客&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.aswifter.com/2016/01/16/hexo-wi
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>工具篇之cocoapods</title>
@@ -158,6 +128,36 @@
 &lt;li&gt;修改头像从选择到上传成功用了多长时间&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;统计的数量和项目,业务需求不一样个数也就不一样 从
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo搭建个人博客那些水坑</title>
+    <link href="http://yoursite.com/2015/01/13/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%82%A3%E4%BA%9B%E6%B0%B4%E5%9D%91/"/>
+    <id>http://yoursite.com/2015/01/13/Hexo搭建个人博客那些水坑/</id>
+    <published>2015-01-13T06:53:57.000Z</published>
+    <updated>2016-04-16T08:09:41.000Z</updated>
+    
+    <content type="html">&lt;p&gt;安装的步骤就不在里说了,这里主要说一个过程中遇到的水坑,有用遇到别的问题可以在评论里反馈一下帮助更多的朋友.&lt;/p&gt;
+&lt;p&gt;推荐几个兄弟的博客&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.aswifter.com/2016/01/16/hexo-with-gitcafe/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.aswifter.com/2016/01/16/hexo-with-gitcafe/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://sunwhut.com/2015/10/30/buildBlog/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://sunwhut.com/2015/10/30/buildBlog/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我收集到的一些水坑&lt;/p&gt;
+&lt;p&gt;1, repo:$&lt;a href=&quot;https://github.com/jsonwang/jsonwang.github.io.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/jsonwang/jsonwang.github.io.git&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;“$” 这里一定要有空格&lt;br&gt;后面的URL 地址也一定要这样的格式jsonwang换成你的github的用户名不是登录名&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;安装的步骤就不在里说了,这里主要说一个过程中遇到的水坑,有用遇到别的问题可以在评论里反馈一下帮助更多的朋友.&lt;/p&gt;
+&lt;p&gt;推荐几个兄弟的博客&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.aswifter.com/2016/01/16/hexo-wi
     
     </summary>
     
