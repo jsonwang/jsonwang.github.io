@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-16T13:11:24.000Z</updated>
+  <updated>2016-04-16T13:29:08.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/04/16/%E5%B7%A5%E5%85%B7%E7%AF%87%E4%B9%8Bcocoapods/"/>
     <id>http://yoursite.com/2016/04/16/工具篇之cocoapods/</id>
     <published>2016-04-16T03:49:19.000Z</published>
-    <updated>2016-04-16T13:11:24.000Z</updated>
+    <updated>2016-04-16T13:29:08.000Z</updated>
     
     <content type="html">&lt;p&gt;使用CocoaPods做依赖管理，使我们的工程更加自动化的、集中的、简单直观的管理第三方开源库。你不用下载开源库的源代码引入工程，不用向工程中添加Framework，不用解决开源库和开源库以及开源库和工程之间的依赖、重复问题，也不用管开源库更新等一系列问题。有了CocoaPods，你只管任性，CocoaPods会为你做好一切.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;#一,安装&lt;/p&gt;
@@ -31,7 +31,8 @@
 &lt;p&gt;#二,使用&lt;br&gt;1,创建一个xcode工程 并cd 到 xxxx.xcodeproj&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;2,$pod init&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;3,vim Podfile 添加一行&lt;/p&gt;
-&lt;p&gt;pod ‘AFNetworking’, ‘~&amp;gt; 3.0.0’,&lt;br&gt;4,打开xxx.xcworkspace&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pod &amp;apos;AFNetworking&amp;apos;, &amp;apos;~&amp;gt; 3.0.0&amp;apos;,&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;4,打开xxx.xcworkspace&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#import &amp;quot;AFNetworking.h&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;就可以正常使用了&lt;/p&gt;
 &lt;p&gt;注意)MAC 升级到10.11 后,出现&lt;/p&gt;
@@ -47,8 +48,14 @@
     
     </summary>
     
-      <category term="about" scheme="http://yoursite.com/categories/about/"/>
+      <category term="开发工具" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
+    
+      <category term="cocoapods" scheme="http://yoursite.com/tags/cocoapods/"/>
+    
+      <category term="pod" scheme="http://yoursite.com/tags/pod/"/>
+    
+      <category term="AFNetworking" scheme="http://yoursite.com/tags/AFNetworking/"/>
     
   </entry>
   
@@ -57,12 +64,12 @@
     <link href="http://yoursite.com/2016/04/16/%E5%B7%A5%E5%85%B7%E7%AF%87%E4%B9%8Bpdf%E6%89%B9%E9%87%8F%E8%BD%ACxcassets/"/>
     <id>http://yoursite.com/2016/04/16/工具篇之pdf批量转xcassets/</id>
     <published>2016-04-16T03:20:49.000Z</published>
-    <updated>2016-04-16T03:22:00.000Z</updated>
+    <updated>2016-04-16T13:27:18.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;instruction&quot;&gt;&lt;a href=&quot;#instruction&quot; class=&quot;headerlink&quot; title=&quot;instruction&quot;&gt;&lt;/a&gt;&lt;strong&gt;instruction&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;写这个工具的目的是为了更高效率使用PDF资源,降低手动操作的错误率.主要功能 批量把 pdf 转成 xcassest&lt;br&gt;现在有的小伙伴可能已经支持 目前做的好一点的做是这样设计和工程代码在不同的分支.&lt;br&gt;如果新加一个图片资源做法大约是这样:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;设计师提交到svn分支 &lt;/li&gt;
-&lt;li&gt;研发人员更新资源 &lt;/li&gt;
+&lt;li&gt;设计师提交到svn分支&lt;/li&gt;
+&lt;li&gt;研发人员更新资源&lt;/li&gt;
 &lt;li&gt;研发人员拖到xcassets中&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;用这个工具设计师在出PDF资源后 直接生成研究人员人的xcassets 提交到分支,开发人员更新就可以得到最新资源,这个工具主要是给设计师用的.&lt;br&gt;目录结构说明:&lt;/p&gt;
@@ -80,8 +87,14 @@
     
     </summary>
     
+      <category term="开发工具" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
-      <category term="pdf xcassets" scheme="http://yoursite.com/tags/pdf-xcassets/"/>
+    
+      <category term="github" scheme="http://yoursite.com/tags/github/"/>
+    
+      <category term="xcassets" scheme="http://yoursite.com/tags/xcassets/"/>
+    
+      <category term="pdf" scheme="http://yoursite.com/tags/pdf/"/>
     
   </entry>
   
@@ -90,7 +103,7 @@
     <link href="http://yoursite.com/2016/01/23/%E8%AE%A9APP%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%A6%82%E6%AD%A4%E7%AE%80%E5%8D%95/"/>
     <id>http://yoursite.com/2016/01/23/让APP数据统计如此简单/</id>
     <published>2016-01-23T07:45:46.000Z</published>
-    <updated>2016-04-16T08:05:42.000Z</updated>
+    <updated>2016-04-16T13:30:50.000Z</updated>
     
     <content type="html">&lt;p&gt;现在APP开发都会加数据统计的功能,比如&lt;/p&gt;
 &lt;ul&gt;
@@ -103,7 +116,7 @@
 &lt;p&gt;1,点登录btn的事件发生的次数&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[MobClick event:@&amp;quot;10000&amp;quot;];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;2, 在好友界面停留多少时间&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;- (void)viewWillAppear:(BOOL)animated&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [super viewWillAppear:animated];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [MobClick beginLogPageView:@&amp;quot;PageOne&amp;quot;];//(&amp;quot;PageOne&amp;quot;为页面名称，可自定义)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)viewWillDisappear:(BOOL)animated &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [super viewWillDisappear:animated];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [MobClick endLogPageView:@&amp;quot;PageOne&amp;quot;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;- (void)viewWillAppear:(BOOL)animated&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [super viewWillAppear:animated];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [MobClick beginLogPageView:@&amp;quot;PageOne&amp;quot;];//(&amp;quot;PageOne&amp;quot;为页面名称，可自定义)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)viewWillDisappear:(BOOL)animated&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [super viewWillDisappear:animated];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [MobClick endLogPageView:@&amp;quot;PageOne&amp;quot;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;3,个改头像从选择到上传成功用了多长时间&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[MobClick event:@&amp;quot;uploadAvatar&amp;quot; attributes:@&amp;#123;@&amp;quot;duration&amp;quot; : @20]&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;花几个小时 加了50个onclick 事件,30个界面的停留时间长,20个自定义事件.完成 抽个烟准备下班.&lt;br&gt;等等,产品经理过来了,小王有几个新统计文档已经发你企邮了如下&lt;/p&gt;
@@ -133,6 +146,18 @@
     
     </summary>
     
+      <category term="杂谈" scheme="http://yoursite.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="友盟" scheme="http://yoursite.com/tags/%E5%8F%8B%E7%9B%9F/"/>
+    
+      <category term="统计" scheme="http://yoursite.com/tags/%E7%BB%9F%E8%AE%A1/"/>
+    
+      <category term="swizzle method" scheme="http://yoursite.com/tags/swizzle-method/"/>
+    
+      <category term="AOP" scheme="http://yoursite.com/tags/AOP/"/>
+    
+      <category term="runtime" scheme="http://yoursite.com/tags/runtime/"/>
     
   </entry>
   
@@ -141,13 +166,14 @@
     <link href="http://yoursite.com/2015/01/13/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%82%A3%E4%BA%9B%E6%B0%B4%E5%9D%91/"/>
     <id>http://yoursite.com/2015/01/13/Hexo搭建个人博客那些水坑/</id>
     <published>2015-01-13T06:53:57.000Z</published>
-    <updated>2016-04-16T08:09:41.000Z</updated>
+    <updated>2016-04-16T13:33:18.000Z</updated>
     
     <content type="html">&lt;p&gt;安装的步骤就不在里说了,这里主要说一个过程中遇到的水坑,有用遇到别的问题可以在评论里反馈一下帮助更多的朋友.&lt;/p&gt;
 &lt;p&gt;推荐几个兄弟的博客&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.aswifter.com/2016/01/16/hexo-with-gitcafe/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.aswifter.com/2016/01/16/hexo-with-gitcafe/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://sunwhut.com/2015/10/30/buildBlog/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://sunwhut.com/2015/10/30/buildBlog/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img src=&quot;http://theme-next.iissnan.com/getting-started.html&quot; alt=&quot;http://theme-next.iissnan.com/getting-started.html&quot;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;我收集到的一些水坑&lt;/p&gt;
 &lt;p&gt;1, repo:$&lt;a href=&quot;https://github.com/jsonwang/jsonwang.github.io.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/jsonwang/jsonwang.github.io.git&lt;/a&gt;&lt;/p&gt;
@@ -163,6 +189,14 @@
     
     </summary>
     
+      <category term="杂谈" scheme="http://yoursite.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="next" scheme="http://yoursite.com/tags/next/"/>
+    
+      <category term="github" scheme="http://yoursite.com/tags/github/"/>
     
   </entry>
   

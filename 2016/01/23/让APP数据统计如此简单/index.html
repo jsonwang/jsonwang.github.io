@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="AK,ak,Hexo, NexT" />
+  <meta name="keywords" content="友盟,统计,swizzle method,AOP,runtime," />
 
 
 
@@ -102,7 +102,7 @@
 
 统计的数量和项目,业务需求不一样个数也就不一样 从几十到几百不等.现在做统计平台的有不少,比如友盟,诸葛ios ,FLURRY，GA等,就要在加入这些SDK 的时候要注意一点广告ID追踪码的问题 要不有可能会被苹果拒了
 下面先以友盟按上面的三个需求看一下代码友盟">
-<meta property="og:updated_time" content="2016-04-16T08:05:42.000Z">
+<meta property="og:updated_time" content="2016-04-16T13:30:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="让APP数据统计如此简单">
 <meta name="twitter:description" content="现在APP开发都会加数据统计的功能,比如
@@ -278,6 +278,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/杂谈/" itemprop="url" rel="index">
+                    <span itemprop="name">杂谈</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -327,7 +346,7 @@
 <p>1,点登录btn的事件发生的次数</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[MobClick event:@&quot;10000&quot;];</span><br></pre></td></tr></table></figure>
 <p>2, 在好友界面停留多少时间</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (void)viewWillAppear:(BOOL)animated</span><br><span class="line">&#123;</span><br><span class="line">    [super viewWillAppear:animated];</span><br><span class="line">    [MobClick beginLogPageView:@&quot;PageOne&quot;];//(&quot;PageOne&quot;为页面名称，可自定义)</span><br><span class="line">&#125;</span><br><span class="line">- (void)viewWillDisappear:(BOOL)animated </span><br><span class="line">&#123;</span><br><span class="line">    [super viewWillDisappear:animated];</span><br><span class="line">    [MobClick endLogPageView:@&quot;PageOne&quot;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (void)viewWillAppear:(BOOL)animated</span><br><span class="line">&#123;</span><br><span class="line">    [super viewWillAppear:animated];</span><br><span class="line">    [MobClick beginLogPageView:@&quot;PageOne&quot;];//(&quot;PageOne&quot;为页面名称，可自定义)</span><br><span class="line">&#125;</span><br><span class="line">- (void)viewWillDisappear:(BOOL)animated</span><br><span class="line">&#123;</span><br><span class="line">    [super viewWillDisappear:animated];</span><br><span class="line">    [MobClick endLogPageView:@&quot;PageOne&quot;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>3,个改头像从选择到上传成功用了多长时间</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[MobClick event:@&quot;uploadAvatar&quot; attributes:@&#123;@&quot;duration&quot; : @20]&#125;;</span><br></pre></td></tr></table></figure>
 <p>花几个小时 加了50个onclick 事件,30个界面的停留时间长,20个自定义事件.完成 抽个烟准备下班.<br>等等,产品经理过来了,小王有几个新统计文档已经发你企邮了如下</p>
@@ -360,6 +379,20 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/友盟/" rel="tag">#友盟</a>
+          
+            <a href="/tags/统计/" rel="tag">#统计</a>
+          
+            <a href="/tags/swizzle-method/" rel="tag">#swizzle method</a>
+          
+            <a href="/tags/AOP/" rel="tag">#AOP</a>
+          
+            <a href="/tags/runtime/" rel="tag">#runtime</a>
+          
+        </div>
       
 
       
@@ -456,7 +489,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -465,7 +498,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

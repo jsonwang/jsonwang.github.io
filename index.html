@@ -269,8 +269,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/about/" itemprop="url" rel="index">
-                    <span itemprop="name">about</span>
+                  <a href="/categories/开发工具/" itemprop="url" rel="index">
+                    <span itemprop="name">开发工具</span>
                   </a>
                 </span>
 
@@ -392,6 +392,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/开发工具/" itemprop="url" rel="index">
+                    <span itemprop="name">开发工具</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -434,8 +453,8 @@
           
             <h2 id="instruction"><a href="#instruction" class="headerlink" title="instruction"></a><strong>instruction</strong></h2><p>写这个工具的目的是为了更高效率使用PDF资源,降低手动操作的错误率.主要功能 批量把 pdf 转成 xcassest<br>现在有的小伙伴可能已经支持 目前做的好一点的做是这样设计和工程代码在不同的分支.<br>如果新加一个图片资源做法大约是这样:</p>
 <ul>
-<li>设计师提交到svn分支 </li>
-<li>研发人员更新资源 </li>
+<li>设计师提交到svn分支</li>
+<li>研发人员更新资源</li>
 <li>研发人员拖到xcassets中</li>
 </ul>
 <p>用这个工具设计师在出PDF资源后 直接生成研究人员人的xcassets 提交到分支,开发人员更新就可以得到最新资源,这个工具主要是给设计师用的.<br>目录结构说明:</p>
@@ -514,6 +533,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/杂谈/" itemprop="url" rel="index">
+                    <span itemprop="name">杂谈</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -565,7 +603,7 @@
 <p>1,点登录btn的事件发生的次数</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[MobClick event:@&quot;10000&quot;];</span><br></pre></td></tr></table></figure>
 <p>2, 在好友界面停留多少时间</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (void)viewWillAppear:(BOOL)animated</span><br><span class="line">&#123;</span><br><span class="line">    [super viewWillAppear:animated];</span><br><span class="line">    [MobClick beginLogPageView:@&quot;PageOne&quot;];//(&quot;PageOne&quot;为页面名称，可自定义)</span><br><span class="line">&#125;</span><br><span class="line">- (void)viewWillDisappear:(BOOL)animated </span><br><span class="line">&#123;</span><br><span class="line">    [super viewWillDisappear:animated];</span><br><span class="line">    [MobClick endLogPageView:@&quot;PageOne&quot;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (void)viewWillAppear:(BOOL)animated</span><br><span class="line">&#123;</span><br><span class="line">    [super viewWillAppear:animated];</span><br><span class="line">    [MobClick beginLogPageView:@&quot;PageOne&quot;];//(&quot;PageOne&quot;为页面名称，可自定义)</span><br><span class="line">&#125;</span><br><span class="line">- (void)viewWillDisappear:(BOOL)animated</span><br><span class="line">&#123;</span><br><span class="line">    [super viewWillDisappear:animated];</span><br><span class="line">    [MobClick endLogPageView:@&quot;PageOne&quot;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>3,个改头像从选择到上传成功用了多长时间</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[MobClick event:@&quot;uploadAvatar&quot; attributes:@&#123;@&quot;duration&quot; : @20]&#125;;</span><br></pre></td></tr></table></figure>
 <p>花几个小时 加了50个onclick 事件,30个界面的停留时间长,20个自定义事件.完成 抽个烟准备下班.<br>等等,产品经理过来了,小王有几个新统计文档已经发你企邮了如下</p>
@@ -650,6 +688,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/杂谈/" itemprop="url" rel="index">
+                    <span itemprop="name">杂谈</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -695,6 +752,7 @@
 <ul>
 <li><a href="https://www.aswifter.com/2016/01/16/hexo-with-gitcafe/" target="_blank" rel="external">https://www.aswifter.com/2016/01/16/hexo-with-gitcafe/</a></li>
 <li><a href="http://sunwhut.com/2015/10/30/buildBlog/" target="_blank" rel="external">http://sunwhut.com/2015/10/30/buildBlog/</a></li>
+<li><img src="http://theme-next.iissnan.com/getting-started.html" alt="http://theme-next.iissnan.com/getting-started.html"></li>
 </ul>
 <p>我收集到的一些水坑</p>
 <p>1, repo:$<a href="https://github.com/jsonwang/jsonwang.github.io.git" target="_blank" rel="external">https://github.com/jsonwang/jsonwang.github.io.git</a></p>
@@ -776,7 +834,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -785,7 +843,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
