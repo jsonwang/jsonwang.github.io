@@ -4,21 +4,21 @@
   <subtitle>用心编程 感悟人生</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://jsonwang.github.io/"/>
   <updated>2016-04-16T13:29:08.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://jsonwang.github.io/</id>
   
   <author>
     <name>AK</name>
-    
+    <email>287971051@qq.com</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
     <title>工具篇之cocoapods</title>
-    <link href="http://yoursite.com/2016/04/16/%E5%B7%A5%E5%85%B7%E7%AF%87%E4%B9%8Bcocoapods/"/>
-    <id>http://yoursite.com/2016/04/16/工具篇之cocoapods/</id>
+    <link href="http://jsonwang.github.io/2016/04/16/%E5%B7%A5%E5%85%B7%E7%AF%87%E4%B9%8Bcocoapods/"/>
+    <id>http://jsonwang.github.io/2016/04/16/工具篇之cocoapods/</id>
     <published>2016-04-16T03:49:19.000Z</published>
     <updated>2016-04-16T13:29:08.000Z</updated>
     
@@ -48,21 +48,21 @@
     
     </summary>
     
-      <category term="开发工具" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="开发工具" scheme="http://jsonwang.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="cocoapods" scheme="http://yoursite.com/tags/cocoapods/"/>
+      <category term="cocoapods" scheme="http://jsonwang.github.io/tags/cocoapods/"/>
     
-      <category term="pod" scheme="http://yoursite.com/tags/pod/"/>
+      <category term="pod" scheme="http://jsonwang.github.io/tags/pod/"/>
     
-      <category term="AFNetworking" scheme="http://yoursite.com/tags/AFNetworking/"/>
+      <category term="AFNetworking" scheme="http://jsonwang.github.io/tags/AFNetworking/"/>
     
   </entry>
   
   <entry>
     <title>工具篇之pdf批量转xcassets</title>
-    <link href="http://yoursite.com/2016/04/16/%E5%B7%A5%E5%85%B7%E7%AF%87%E4%B9%8Bpdf%E6%89%B9%E9%87%8F%E8%BD%ACxcassets/"/>
-    <id>http://yoursite.com/2016/04/16/工具篇之pdf批量转xcassets/</id>
+    <link href="http://jsonwang.github.io/2016/04/16/%E5%B7%A5%E5%85%B7%E7%AF%87%E4%B9%8Bpdf%E6%89%B9%E9%87%8F%E8%BD%ACxcassets/"/>
+    <id>http://jsonwang.github.io/2016/04/16/工具篇之pdf批量转xcassets/</id>
     <published>2016-04-16T03:20:49.000Z</published>
     <updated>2016-04-16T13:27:18.000Z</updated>
     
@@ -87,21 +87,21 @@
     
     </summary>
     
-      <category term="开发工具" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="开发工具" scheme="http://jsonwang.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="github" scheme="http://yoursite.com/tags/github/"/>
+      <category term="github" scheme="http://jsonwang.github.io/tags/github/"/>
     
-      <category term="xcassets" scheme="http://yoursite.com/tags/xcassets/"/>
+      <category term="xcassets" scheme="http://jsonwang.github.io/tags/xcassets/"/>
     
-      <category term="pdf" scheme="http://yoursite.com/tags/pdf/"/>
+      <category term="pdf" scheme="http://jsonwang.github.io/tags/pdf/"/>
     
   </entry>
   
   <entry>
     <title>让APP数据统计如此简单</title>
-    <link href="http://yoursite.com/2016/01/23/%E8%AE%A9APP%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%A6%82%E6%AD%A4%E7%AE%80%E5%8D%95/"/>
-    <id>http://yoursite.com/2016/01/23/让APP数据统计如此简单/</id>
+    <link href="http://jsonwang.github.io/2016/01/23/%E8%AE%A9APP%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%A6%82%E6%AD%A4%E7%AE%80%E5%8D%95/"/>
+    <id>http://jsonwang.github.io/2016/01/23/让APP数据统计如此简单/</id>
     <published>2016-01-23T07:45:46.000Z</published>
     <updated>2016-04-16T13:30:50.000Z</updated>
     
@@ -146,25 +146,25 @@
     
     </summary>
     
-      <category term="杂谈" scheme="http://yoursite.com/categories/%E6%9D%82%E8%B0%88/"/>
+      <category term="杂谈" scheme="http://jsonwang.github.io/categories/%E6%9D%82%E8%B0%88/"/>
     
     
-      <category term="友盟" scheme="http://yoursite.com/tags/%E5%8F%8B%E7%9B%9F/"/>
+      <category term="友盟" scheme="http://jsonwang.github.io/tags/%E5%8F%8B%E7%9B%9F/"/>
     
-      <category term="统计" scheme="http://yoursite.com/tags/%E7%BB%9F%E8%AE%A1/"/>
+      <category term="统计" scheme="http://jsonwang.github.io/tags/%E7%BB%9F%E8%AE%A1/"/>
     
-      <category term="swizzle method" scheme="http://yoursite.com/tags/swizzle-method/"/>
+      <category term="swizzle method" scheme="http://jsonwang.github.io/tags/swizzle-method/"/>
     
-      <category term="AOP" scheme="http://yoursite.com/tags/AOP/"/>
+      <category term="AOP" scheme="http://jsonwang.github.io/tags/AOP/"/>
     
-      <category term="runtime" scheme="http://yoursite.com/tags/runtime/"/>
+      <category term="runtime" scheme="http://jsonwang.github.io/tags/runtime/"/>
     
   </entry>
   
   <entry>
     <title>Hexo搭建个人博客那些水坑</title>
-    <link href="http://yoursite.com/2015/01/13/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%82%A3%E4%BA%9B%E6%B0%B4%E5%9D%91/"/>
-    <id>http://yoursite.com/2015/01/13/Hexo搭建个人博客那些水坑/</id>
+    <link href="http://jsonwang.github.io/2015/01/13/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%82%A3%E4%BA%9B%E6%B0%B4%E5%9D%91/"/>
+    <id>http://jsonwang.github.io/2015/01/13/Hexo搭建个人博客那些水坑/</id>
     <published>2015-01-13T06:53:57.000Z</published>
     <updated>2016-04-16T13:33:18.000Z</updated>
     
@@ -189,14 +189,14 @@
     
     </summary>
     
-      <category term="杂谈" scheme="http://yoursite.com/categories/%E6%9D%82%E8%B0%88/"/>
+      <category term="杂谈" scheme="http://jsonwang.github.io/categories/%E6%9D%82%E8%B0%88/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="hexo" scheme="http://jsonwang.github.io/tags/hexo/"/>
     
-      <category term="next" scheme="http://yoursite.com/tags/next/"/>
+      <category term="next" scheme="http://jsonwang.github.io/tags/next/"/>
     
-      <category term="github" scheme="http://yoursite.com/tags/github/"/>
+      <category term="github" scheme="http://jsonwang.github.io/tags/github/"/>
     
   </entry>
   
