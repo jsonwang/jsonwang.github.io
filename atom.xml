@@ -108,7 +108,7 @@
     <link href="http://jsonwang.github.io/2016/01/23/%E8%AE%A9APP%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%A6%82%E6%AD%A4%E7%AE%80%E5%8D%95/"/>
     <id>http://jsonwang.github.io/2016/01/23/让APP数据统计如此简单/</id>
     <published>2016-01-23T07:45:46.000Z</published>
-    <updated>2016-04-16T18:13:53.000Z</updated>
+    <updated>2016-04-16T18:15:03.000Z</updated>
     
     <content type="html">&lt;p&gt;现在APP开发都会加数据统计的功能,比如&lt;/p&gt;
 &lt;ul&gt;
@@ -120,9 +120,9 @@
 &lt;p&gt;下面先以友盟为例按上面的三个需求看一下代码&lt;br&gt;&lt;a href=&quot;http://dev.umeng.com/analytics/ios-doc/integration?spm=0.0.0.0.4Td78E&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;友盟iOS统计集成文档&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;1,点登录btn的事件发生的次数&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[MobClick event:@&amp;quot;10000&amp;quot;];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;2, 在好友界面停留多少时间&lt;/p&gt;
+&lt;p&gt;2,在好友界面停留多少时间&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;- (void)viewWillAppear:(BOOL)animated&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [super viewWillAppear:animated];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [MobClick beginLogPageView:@&amp;quot;PageOne&amp;quot;];//(&amp;quot;PageOne&amp;quot;为页面名称，可自定义)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- (void)viewWillDisappear:(BOOL)animated&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [super viewWillDisappear:animated];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [MobClick endLogPageView:@&amp;quot;PageOne&amp;quot;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;3,个改头像从选择到上传成功用了多长时间&lt;/p&gt;
+&lt;p&gt;3,修改头像从选择到上传成功用了多长时间&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;[MobClick event:@&amp;quot;uploadAvatar&amp;quot; attributes:@&amp;#123;@&amp;quot;duration&amp;quot; : @20]&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;花几个小时 加了50个onclick 事件,30个界面的停留时间长,20个自定义事件.完成 抽个烟准备下班.&lt;br&gt;等等,产品经理过来了,小王有几个新统计文档已经发你企邮了如下&lt;/p&gt;
 &lt;ul&gt;
