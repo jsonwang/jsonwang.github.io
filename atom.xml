@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-16T03:54:04.000Z</updated>
+  <updated>2016-04-16T07:44:13.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo搭建个人博客那些水坑</title>
+    <link href="http://yoursite.com/2016/04/16/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%82%A3%E4%BA%9B%E6%B0%B4%E5%9D%91/"/>
+    <id>http://yoursite.com/2016/04/16/Hexo搭建个人博客那些水坑/</id>
+    <published>2016-04-16T06:53:57.000Z</published>
+    <updated>2016-04-16T07:44:13.000Z</updated>
+    
+    <content type="html">&lt;p&gt;安装的步骤就不在里说了,这里主要说一个过程中遇到的水坑,有用遇到别的问题可以在评论里反馈一下帮助更多的朋友.&lt;/p&gt;
+&lt;p&gt;推荐几个兄弟的博客&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.aswifter.com/2016/01/16/hexo-with-gitcafe/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.aswifter.com/2016/01/16/hexo-with-gitcafe/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://sunwhut.com/2015/10/30/buildBlog/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://sunwhut.com/2015/10/30/buildBlog/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我收集到的一些水坑&lt;/p&gt;
+&lt;p&gt;1, repo:$&lt;a href=&quot;https://github.com/jsonwang/jsonwang.github.io.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/jsonwang/jsonwang.github.io.git&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;“$” 这里一定要有空格&lt;br&gt;后面的URL 地址也一定要这样的格式jsonwang换成你的github的用户名不是登录名&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;安装的步骤就不在里说了,这里主要说一个过程中遇到的水坑,有用遇到别的问题可以在评论里反馈一下帮助更多的朋友.&lt;/p&gt;
+&lt;p&gt;推荐几个兄弟的博客&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.aswifter.com/2016/01/16/hexo-wi
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>工具篇之cocoapods</title>
@@ -84,39 +114,17 @@
   </entry>
   
   <entry>
-    <title>test</title>
-    <link href="http://yoursite.com/2016/04/14/test/"/>
-    <id>http://yoursite.com/2016/04/14/test/</id>
-    <published>2016-04-14T14:37:52.000Z</published>
-    <updated>2016-04-14T14:37:52.000Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-      <category term="wang" scheme="http://yoursite.com/tags/wang/"/>
-    
-      <category term="wagnh" scheme="http://yoursite.com/tags/wagnh/"/>
-    
-      <category term="[object Object]" scheme="http://yoursite.com/tags/object-Object/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
+    <title>Hello World MD</title>
     <link href="http://yoursite.com/2016/04/14/hello-world/"/>
     <id>http://yoursite.com/2016/04/14/hello-world/</id>
     <published>2016-04-14T12:13:27.000Z</published>
-    <updated>2016-04-15T10:02:07.000Z</updated>
+    <updated>2016-04-16T07:13:23.000Z</updated>
     
     <content type="html">&lt;ul&gt;
 &lt;li&gt;Another Tag&lt;/li&gt;
-&lt;li&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;&lt;a href=&quot;&quot;&gt;hwsss&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;``` bash&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &amp;quot;My New Post&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
