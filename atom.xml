@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jsonwang.github.io/"/>
-  <updated>2016-04-16T17:28:34.000Z</updated>
+  <updated>2016-04-20T18:29:27.000Z</updated>
   <id>http://jsonwang.github.io/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Swift学习资料汇总</title>
+    <link href="http://jsonwang.github.io/2016/04/21/Swift%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99%E6%B1%87%E6%80%BB/"/>
+    <id>http://jsonwang.github.io/2016/04/21/Swift学习资料汇总/</id>
+    <published>2016-04-20T18:14:12.000Z</published>
+    <updated>2016-04-20T18:29:27.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Swift-github-开源项目&quot;&gt;&lt;a href=&quot;#Swift-github-开源项目&quot; class=&quot;headerlink&quot; title=&quot;Swift github 开源项目&quot;&gt;&lt;/a&gt;Swift github 开源项目&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.aswifter.com/2015/07/26/use-swiftdate/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SwiftDate：Swift中的日期处理库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Alamofire/Alamofire&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Alamofire-Swift实现的HTTP请求库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/SwiftyJSON/SwiftyJSON&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SwiftyJSON-Swift版Json处理库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ankurp/Dollar&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dollar-函数式编程辅助库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ReactKit/SwiftTask&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SwiftTask-Swift实现Promise模式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Haneke/HanekeSwift&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HanekeSwift-轻量级的缓存实现&lt;/a&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;《The-Swift-Programming-Language》中文版&quot;&gt;&lt;a href=&quot;#《The-Swift-Programming-Language》中文版&quot; class=&quot;headerlink&quot; title=&quot;《The Swift Programming Language》中文版&quot;&gt;&lt;/a&gt;《The Swift Programming Language》中文版&lt;/h2&gt;&lt;p&gt;Swift 是一种新的编程语言，用于编写 iOS 和 OS X 应用。Swift 结合了 C 和 Objective-C 的优点并且不受C兼容性的限制。Swift 采用安全的编程模式并添加了很多新特性，这将使编程更简单，更灵活，也更有趣。Swift 是基于成熟而且倍受喜爱的 Cocoa 和 Cocoa Touch 框架，他的降临将重新定义软件开发。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://numbbbbb.gitbooks.io/-the-swift-programming-language-/content/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;The Swift Programming Language 中文版&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;斯坦福Swift公开课&quot;&gt;&lt;a href=&quot;#斯坦福Swift公开课&quot; class=&quot;headerlink&quot; title=&quot;斯坦福Swift公开课&quot;&gt;&lt;/a&gt;斯坦福Swift公开课&lt;/h2&gt;&lt;p&gt;此公开课包括iOS SDK、用户界面设计、多触点技术下的用户交互、MVC模式与面向对象编程、内存管理、Swift语言等。其它主题包括动画、移动设备电源管理、多线程、网络与性能优化。&lt;br&gt;斯坦福大学的iOS开发公开课被称为iOS开发领域的顶级教程，讲师Paul Hegarty为斯坦福大学软件工程学教授，被大家亲切的称为白胡子老头，因此斯坦福的Swift公开课也被大家寄予厚望。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/x140yu/Developing_iOS_8_Apps_With_Swift#rd?sukey=fc78a68049a14bb25a02ea195902fc80ee6bd6b1335411009577482b37530f8469073cc03e12ff73ae5ab8415f1f847e&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;斯坦福Swift公开课&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Swift-语言指南&quot;&gt;&lt;a href=&quot;#Swift-语言指南&quot; class=&quot;headerlink&quot; title=&quot;Swift 语言指南&quot;&gt;&lt;/a&gt;Swift 语言指南&lt;/h2&gt;&lt;p&gt;这份指南汇集了 Swift 语言主流学习资源，并以开发者的视角整理编排。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/chenyc/SwiftGuide#rd?sukey=fc78a68049a14bb2d8ba543c69827072753d1de4747399a66e909a8339db48319e094383f93d63a8635d408acd518b6d&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Swift 语言指南&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Swift-github-开源项目&quot;&gt;&lt;a href=&quot;#Swift-github-开源项目&quot; class=&quot;headerlink&quot; title=&quot;Swift github 开源项目&quot;&gt;&lt;/a&gt;Swift github 开源项目&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.aswifter.com/2015/07/26/use-swiftdate/&quot;&gt;SwiftDate：Swift中的日期处理库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Alamofire/Alamofire&quot;&gt;Alamofire-Swift实现的HTTP请求库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/SwiftyJSON/SwiftyJSON&quot;&gt;SwiftyJSON-Swift版Json处理库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ankurp/Dollar&quot;&gt;Dollar-函数式编程辅助库&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/ReactKit/SwiftTask&quot;&gt;SwiftTask-Swift实现Promise模式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Haneke/HanekeSwift&quot;&gt;HanekeSwift-轻量级的缓存实现&lt;/a&gt;
+    
+    </summary>
+    
+      <category term="Swift" scheme="http://jsonwang.github.io/categories/Swift/"/>
+    
+    
+      <category term="Swift" scheme="http://jsonwang.github.io/tags/Swift/"/>
+    
+      <category term="The Swift Programming Language" scheme="http://jsonwang.github.io/tags/The-Swift-Programming-Language/"/>
+    
+      <category term="Playground" scheme="http://jsonwang.github.io/tags/Playground/"/>
+    
+  </entry>
   
   <entry>
     <title>工具篇之cocoapods</title>
