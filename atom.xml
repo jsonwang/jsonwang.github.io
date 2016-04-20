@@ -95,11 +95,11 @@
       <category term="开发工具" scheme="http://jsonwang.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="github" scheme="http://jsonwang.github.io/tags/github/"/>
-    
       <category term="xcassets" scheme="http://jsonwang.github.io/tags/xcassets/"/>
     
       <category term="pdf" scheme="http://jsonwang.github.io/tags/pdf/"/>
+    
+      <category term="github" scheme="http://jsonwang.github.io/tags/github/"/>
     
   </entry>
   
@@ -195,11 +195,11 @@
       <category term="杂谈" scheme="http://jsonwang.github.io/categories/%E6%9D%82%E8%B0%88/"/>
     
     
+      <category term="github" scheme="http://jsonwang.github.io/tags/github/"/>
+    
       <category term="hexo" scheme="http://jsonwang.github.io/tags/hexo/"/>
     
       <category term="next" scheme="http://jsonwang.github.io/tags/next/"/>
-    
-      <category term="github" scheme="http://jsonwang.github.io/tags/github/"/>
     
   </entry>
   
