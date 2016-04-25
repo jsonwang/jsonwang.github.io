@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jsonwang.github.io/"/>
-  <updated>2016-04-22T18:37:58.000Z</updated>
+  <updated>2016-04-22T19:16:28.000Z</updated>
   <id>http://jsonwang.github.io/</id>
   
   <author>
@@ -20,13 +20,15 @@
     <link href="http://jsonwang.github.io/2016/04/23/%E5%B7%A5%E5%85%B7%E7%AF%87%E4%B9%8Bappledoc/"/>
     <id>http://jsonwang.github.io/2016/04/23/工具篇之appledoc/</id>
     <published>2016-04-22T18:17:26.000Z</published>
-    <updated>2016-04-22T18:37:58.000Z</updated>
+    <updated>2016-04-22T19:16:28.000Z</updated>
     
     <content type="html">&lt;p&gt;做项目的人多了，就需要文档了。(其实就是一个人做的项目也要做好记录文档),当来一个新同事的时候,咋样能让他快速了解我们的工程,融入我们的团队当然主的还是通过文档的.&lt;/p&gt;
 &lt;h2 id=&quot;appledoc&quot;&gt;&lt;a href=&quot;#appledoc&quot; class=&quot;headerlink&quot; title=&quot;appledoc&quot;&gt;&lt;/a&gt;appledoc&lt;/h2&gt;&lt;p&gt;appledoc 是在 stackoverflow 上被大家推荐的一个注释工具。有几个原因造成我比较喜欢它：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;它默认生成的文档风格和苹果的官方文档是一致的，而 doxygen 需要另外配置。&lt;br&gt;appledoc 就是用 objective-c 生成的，必要的时候调试和改动也比较方便。&lt;br&gt;可以生成 docset，并且集成到 Xcode 中。这一点是很赞的，相当于在源码中按住 option 再单击就可以调出相应方法的帮助。&lt;br&gt;appledoc 源码在 github 上，而 doxygen 在 svn 上。我个人比较偏激地认为比较活跃的开源项目都应该在 github 上。&lt;br&gt;相对于 headerdoc，它没有特殊的注释要求，可以用 /** */ 的格式，也可以兼容 /*! */ 的格式的注释，并且生成的注释有汇总页面。&lt;/p&gt;
 &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;那么简单介绍一下如何安装 appledoc，安装非常简单，只需要 2 步在终端运行：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git clone git://github.com/tomaz/appledoc.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cd appledoc&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo sh install-appledoc.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h2 id=&quot;使用&quot;&gt;&lt;a href=&quot;#使用&quot; class=&quot;headerlink&quot; title=&quot;使用&quot;&gt;&lt;/a&gt;使用&lt;/h2&gt;&lt;p&gt;使用 appledoc 时，只需要用如下命令即可：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;appledoc -o ./doc --project-name ynote --project-company youdao .&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;appledoc 会扫描当前路径下的所有文件，然后生成好文档放到 doc 目录下。你也可以用 appledoc –help 查看所有可用的参数。&lt;br&gt;基本上使用起来还是比较方便的，详细的信息可以查看官方的文档：&lt;a href=&quot;http://gentlebytes.com/appledoc/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://gentlebytes.com/appledoc/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;其实可能出现的错误&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;WARN: --company-id argument or global setting not given, but creating DocSet is enabled, will use &amp;apos;com.ak.nxlib&amp;apos;!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;WARN | unsupported typedef enum at NXLineLabel.h@21!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2016-04-23 03:00:38.421 appledoc[46394:679612] *** Assertion failure in +[GBMethodData methodDataWithType:result:arguments:], /Users/ak/Desktop/appledoc/Model/GBMethodData.m:44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Oops, something went wrong...&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content>
     
     <summary type="html">
@@ -143,7 +145,7 @@
     <link href="http://jsonwang.github.io/2016/04/16/%E5%B7%A5%E5%85%B7%E7%AF%87%E4%B9%8Bpdf%E6%89%B9%E9%87%8F%E8%BD%ACxcassets/"/>
     <id>http://jsonwang.github.io/2016/04/16/工具篇之pdf批量转xcassets/</id>
     <published>2016-04-16T03:20:49.000Z</published>
-    <updated>2016-04-16T17:20:27.000Z</updated>
+    <updated>2016-04-25T13:36:10.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;instruction&quot;&gt;&lt;a href=&quot;#instruction&quot; class=&quot;headerlink&quot; title=&quot;instruction&quot;&gt;&lt;/a&gt;&lt;strong&gt;instruction&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;写这个工具的目的是为了更高效率使用PDF资源,降低手动操作的错误率.主要功能 批量把 pdf 转成 xcassest&lt;br&gt;现在有的小伙伴可能已经支持 目前做的好一点的做是这样设计和工程代码在不同的分支.&lt;br&gt;如果新加一个图片资源做法大约是这样:&lt;/p&gt;
 &lt;ul&gt;
@@ -152,10 +154,7 @@
 &lt;li&gt;研发人员拖到xcassets中&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;用这个工具设计师在出PDF资源后 直接生成研究人员人的xcassets 提交到分支,开发人员更新就可以得到最新资源,这个工具主要是给设计师用的.&lt;br&gt;目录结构说明:&lt;/p&gt;
-&lt;p&gt;./bin 编译好的可执行文件&lt;/p&gt;
-&lt;p&gt;./pdfConvertXcassets 主要代码&lt;/p&gt;
-&lt;p&gt;./sample 例子pdf 文件&lt;/p&gt;
+&lt;p&gt;用这个工具设计师在出PDF资源后 直接生成研究人员人的xcassets 提交到分支,开发人员更新就可以得到最新资源,这个工具主要是给设计师用的.&lt;br&gt;目录结构说明:&lt;br&gt;.&lt;br&gt;├── bin 编译好的可执行文件&lt;br&gt;│&lt;br&gt;├── pdfConvertXcassets 主要代码&lt;br&gt;│&lt;br&gt;└── sample 例子pdf 文件&lt;/p&gt;
 &lt;p&gt;How to use&lt;br&gt;&lt;img src=&quot;http://img.blog.csdn.net/20160320120843970&quot; alt=&quot;这里写图片描述&quot;&gt;&lt;/p&gt;
 &lt;p&gt;设置输入 和输出path 点开始就可以了&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/jsonwang/pdf2xcassets&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github 源码地址&lt;/a&gt;&lt;/p&gt;

@@ -90,7 +90,7 @@ appledocappledoc 是在 stackoverflow 上被大家推荐的一个注释工具。
 <meta property="og:site_name" content="AK的园子">
 <meta property="og:description" content="做项目的人多了，就需要文档了。(其实就是一个人做的项目也要做好记录文档),当来一个新同事的时候,咋样能让他快速了解我们的工程,融入我们的团队当然主的还是通过文档的.
 appledocappledoc 是在 stackoverflow 上被大家推荐的一个注释工具。有几个原因造成我比较喜欢它：">
-<meta property="og:updated_time" content="2016-04-22T18:37:58.000Z">
+<meta property="og:updated_time" content="2016-04-22T19:16:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工具篇之appledoc">
 <meta name="twitter:description" content="做项目的人多了，就需要文档了。(其实就是一个人做的项目也要做好记录文档),当来一个新同事的时候,咋样能让他快速了解我们的工程,融入我们的团队当然主的还是通过文档的.
@@ -302,6 +302,8 @@ appledocappledoc 是在 stackoverflow 上被大家推荐的一个注释工具。
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>那么简单介绍一下如何安装 appledoc，安装非常简单，只需要 2 步在终端运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone git://github.com/tomaz/appledoc.git</span><br><span class="line">cd appledoc</span><br><span class="line">sudo sh install-appledoc.sh</span><br></pre></td></tr></table></figure></p>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>使用 appledoc 时，只需要用如下命令即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">appledoc -o ./doc --project-name ynote --project-company youdao .</span><br></pre></td></tr></table></figure></p>
 <p>appledoc 会扫描当前路径下的所有文件，然后生成好文档放到 doc 目录下。你也可以用 appledoc –help 查看所有可用的参数。<br>基本上使用起来还是比较方便的，详细的信息可以查看官方的文档：<a href="http://gentlebytes.com/appledoc/" target="_blank" rel="external">http://gentlebytes.com/appledoc/</a></p>
+<p>其实可能出现的错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">WARN: --company-id argument or global setting not given, but creating DocSet is enabled, will use &apos;com.ak.nxlib&apos;!</span><br><span class="line">WARN | unsupported typedef enum at NXLineLabel.h@21!</span><br><span class="line">2016-04-23 03:00:38.421 appledoc[46394:679612] *** Assertion failure in +[GBMethodData methodDataWithType:result:arguments:], /Users/ak/Desktop/appledoc/Model/GBMethodData.m:44</span><br><span class="line">Oops, something went wrong...</span><br></pre></td></tr></table></figure>
 
       
     </div>
