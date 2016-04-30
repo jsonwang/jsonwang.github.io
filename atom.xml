@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jsonwang.github.io/"/>
-  <updated>2016-04-22T19:16:28.000Z</updated>
+  <updated>2016-04-30T14:33:57.000Z</updated>
   <id>http://jsonwang.github.io/</id>
   
   <author>
@@ -14,6 +14,90 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MAC 硬盘清理重点</title>
+    <link href="http://jsonwang.github.io/2016/04/30/MAC-%E7%A1%AC%E7%9B%98%E6%B8%85%E7%90%86%E9%87%8D%E7%82%B9/"/>
+    <id>http://jsonwang.github.io/2016/04/30/MAC-硬盘清理重点/</id>
+    <published>2016-04-30T12:31:15.000Z</published>
+    <updated>2016-04-30T14:33:57.000Z</updated>
+    
+    <content type="html">&lt;p&gt;「其他」部分占用磁盘空间往往不小，那么到底那些文件组成了「其他」部分呢？&lt;/p&gt;
+&lt;p&gt;OS X 可以识别应用程序、备份、音频、电影、备份、和照片等集中文件类型，而「其他」部分则含括了除上述提到的文件类型的其他文件类型。这意味着，「其他」部分包含了相当多的文件类型。常见的如下列表：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;文件和文件类型，包括.pdf、.doc、.psd 等文件类型&lt;/li&gt;
+&lt;li&gt;存档文件和磁盘映像，包括 .zip、.dmg、.iso 等文件类型&lt;/li&gt;
+&lt;li&gt;个人文件和用户数据（user data）&lt;/li&gt;
+&lt;li&gt;OS X 系统文件夹内的文件，如系统的临时文件等&lt;/li&gt;
+&lt;li&gt;用户库文件，如应用程序支持文档、iCloud 文档、屏保程序等&lt;/li&gt;
+&lt;li&gt;用户缓存和系统缓存，比如浏览器缓存和存储在本地的对话信息&lt;/li&gt;
+&lt;li&gt;字体文件、应用程序插件、应用程序扩展等&lt;/li&gt;
+&lt;li&gt;Spotlight 无法识别的文件类型，如虚拟机的磁盘驱动器，Windows Boot Camp 启动分区等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我的电脑是 MacBook Pro（Retina 显示屏，13 英寸，2013 年末）闪存是120GB 很不够用,其中 硬盘中的其它占很大部分,我今天清理了 75GB左右的空间,这下爽多了.&lt;br&gt;我的电脑环境:&lt;br&gt;xcode Version 7.3 (7D175)&lt;/p&gt;
+&lt;p&gt;OS X EI 10.11.4&lt;/p&gt;
+&lt;font color=&quot;FF0000&quot; size=&quot;4px&quot;&gt;&lt;br&gt;一定要注意在删除清理文件时一定要确认功能有些操作是不可逆的做好备份&lt;br&gt;&lt;/font&gt;
+
+
+&lt;p&gt;具体清理目录&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1.删除 xcode 设备支持的老版本和不用的设备支持&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$/Applications/Xcode.app/Contents/Developer/Platforms&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;2.手机系统日志&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$/Users/用户名/Library/Developer/Xcode/iOS\ Device\ Logs&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;3.手机系统日志&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$/Users/用户名/Library/Developer/Xcode/iOS\ Device\ Logs&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;4.删除DerivedData&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$/Users/用户名/Library/Developer/Xcode/DerivedData&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;5.删除QuickLook缓存文件 慎用&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$/private/var/folders/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;5.删除缓存文件&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$~/Library/Caches/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;6.删除不用的模拟器版本&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;7.删除文字转语音功能OS X内置的嗓音文件&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$/System/Library/Speech/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;8.移除模拟器中安装的Apps 直接重置模拟器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;9.移除Archives 建议备份dSYM文件夹 慎用&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$~/Library/Developer/Xcode/Archives&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;10.移除旧的Docsets&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$~/Library/Developer/Shared/Documentation/DocSet&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;11.最容易被忽视的我们项目的.svn 文件时间越长越大 提交所有代码在重新co 一份新代码,git 同理&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;12.删除不使用的桌面背景图片 440M&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$/Library/Desktop\ Pictures/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;13.屏幕保护图片这个小点 147M左右 看个人情况是否删除&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$/Library/Screen\ Savers&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后推荐两个软件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.omnigroup.com/more&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OmniDiskSweeper找出硬盘中的大文件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.mycleanmymac.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CleanMyMac清理硬盘但文章中说的文件不会被删除 &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;「其他」部分占用磁盘空间往往不小，那么到底那些文件组成了「其他」部分呢？&lt;/p&gt;
+&lt;p&gt;OS X 可以识别应用程序、备份、音频、电影、备份、和照片等集中文件类型，而「其他」部分则含括了除上述提到的文件类型的其他文件类型。这意味着，「其他」部分包含了相当多的文件类型。常见的如
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>工具篇之appledoc</title>
@@ -41,9 +125,9 @@
       <category term="开发工具" scheme="http://jsonwang.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="appledoc" scheme="http://jsonwang.github.io/tags/appledoc/"/>
-    
       <category term="github" scheme="http://jsonwang.github.io/tags/github/"/>
+    
+      <category term="appledoc" scheme="http://jsonwang.github.io/tags/appledoc/"/>
     
       <category term="gentlebytes" scheme="http://jsonwang.github.io/tags/gentlebytes/"/>
     
@@ -132,9 +216,9 @@
       <category term="开发工具" scheme="http://jsonwang.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="pod" scheme="http://jsonwang.github.io/tags/pod/"/>
-    
       <category term="cocoapods" scheme="http://jsonwang.github.io/tags/cocoapods/"/>
+    
+      <category term="pod" scheme="http://jsonwang.github.io/tags/pod/"/>
     
       <category term="AFNetworking" scheme="http://jsonwang.github.io/tags/AFNetworking/"/>
     
@@ -273,11 +357,11 @@
       <category term="杂谈" scheme="http://jsonwang.github.io/categories/%E6%9D%82%E8%B0%88/"/>
     
     
-      <category term="github" scheme="http://jsonwang.github.io/tags/github/"/>
-    
       <category term="hexo" scheme="http://jsonwang.github.io/tags/hexo/"/>
     
       <category term="next" scheme="http://jsonwang.github.io/tags/next/"/>
+    
+      <category term="github" scheme="http://jsonwang.github.io/tags/github/"/>
     
   </entry>
   
