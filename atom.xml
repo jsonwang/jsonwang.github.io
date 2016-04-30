@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jsonwang.github.io/"/>
-  <updated>2016-04-30T15:04:40.000Z</updated>
+  <updated>2016-04-30T15:07:28.000Z</updated>
   <id>http://jsonwang.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://jsonwang.github.io/2016/04/30/MAC-%E7%A1%AC%E7%9B%98%E6%B8%85%E7%90%86%E9%87%8D%E7%82%B9/"/>
     <id>http://jsonwang.github.io/2016/04/30/MAC-硬盘清理重点/</id>
     <published>2016-04-30T12:31:15.000Z</published>
-    <updated>2016-04-30T15:04:40.000Z</updated>
+    <updated>2016-04-30T15:07:28.000Z</updated>
     
     <content type="html">&lt;p&gt;「其他」部分占用磁盘空间往往不小，那么到底那些文件组成了「其他」部分呢？&lt;/p&gt;
 &lt;p&gt;OS X 可以识别应用程序、备份、音频、电影、备份、和照片等集中文件类型，而「其他」部分则含括了除上述提到的文件类型的其他文件类型。这意味着，「其他」部分包含了相当多的文件类型。常见的如下列表：&lt;/p&gt;
@@ -34,7 +34,7 @@
 &lt;li&gt;字体文件、应用程序插件、应用程序扩展等&lt;/li&gt;
 &lt;li&gt;Spotlight 无法识别的文件类型，如虚拟机的磁盘驱动器，Windows Boot Camp 启动分区等&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;/images/macclear.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/macclear.jpeg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;我的电脑是 MacBook Pro（Retina 显示屏，13 英寸，2013 年末）闪存是120GB 很不够用,其中 硬盘中的其它占很大部分,我今天清理了 75GB左右的空间,这下爽多了.&lt;br&gt;我的电脑环境:&lt;br&gt;xcode Version 7.3 (7D175)&lt;/p&gt;
 &lt;p&gt;OS X EI 10.11.4&lt;/p&gt;
 &lt;font color=&quot;FF0000&quot; size=&quot;4px&quot;&gt;&lt;br&gt;一定要注意在删除清理文件时一定要确认功能有些操作是不可逆的做好备份&lt;br&gt;&lt;/font&gt;
@@ -96,7 +96,18 @@
     <summary type="html">
     
       &lt;p&gt;「其他」部分占用磁盘空间往往不小，那么到底那些文件组成了「其他」部分呢？&lt;/p&gt;
-&lt;p&gt;OS X 可以识别应用程序、备份、音频、电影、备份、和照片等集中文件类型，而「其他」部分则含括了除上述提到的文件类型的其他文件类型。这意味着，「其他」部分包含了相当多的文件类型。常见的如
+&lt;p&gt;OS X 可以识别应用程序、备份、音频、电影、备份、和照片等集中文件类型，而「其他」部分则含括了除上述提到的文件类型的其他文件类型。这意味着，「其他」部分包含了相当多的文件类型。常见的如下列表：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;文件和文件类型，包括.pdf、.doc、.psd 等文件类型&lt;/li&gt;
+&lt;li&gt;存档文件和磁盘映像，包括 .zip、.dmg、.iso 等文件类型&lt;/li&gt;
+&lt;li&gt;个人文件和用户数据（user data）&lt;/li&gt;
+&lt;li&gt;OS X 系统文件夹内的文件，如系统的临时文件等&lt;/li&gt;
+&lt;li&gt;用户库文件，如应用程序支持文档、iCloud 文档、屏保程序等&lt;/li&gt;
+&lt;li&gt;用户缓存和系统缓存，比如浏览器缓存和存储在本地的对话信息&lt;/li&gt;
+&lt;li&gt;字体文件、应用程序插件、应用程序扩展等&lt;/li&gt;
+&lt;li&gt;Spotlight 无法识别的文件类型，如虚拟机的磁盘驱动器，Windows Boot Camp 启动分区等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/images/macclear.jpeg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
     
     </summary>
     
