@@ -301,10 +301,10 @@
         
           
             <ul>
-<li>iOS编译签名文件找不到</li>
+<li>iOS编译签名文件找不到<br><code>Check dependencies
+Code Sign error: No matching provisioning profile found: Your build settings specify a provisioning profile with the UUID 75025357-245d-448b-9343-96148a0xxxxx, however, no such provisioning profile was found.</code><br>原因是jenkins以jenkins用户身份运行，iOS项目编译用的签名文件要从安装证书时的用户目录</li>
 </ul>
-<p><code>Check dependencies
-Code Sign error: No matching provisioning profile found: Your build settings specify a provisioning profile with the UUID “75025357-245d-448b-9343-96148a0xxxxx”, however, no such provisioning profile was found.</code><br>原因是jenkins以jenkins用户身份运行，iOS项目编译用的签名文件要从安装证书时的用户目录<br><code>/Users/用户名/Library/MobileDevice/Provisioning Profiles</code><br>拷贝到<br><code>/Users/Shared/Jenkins/Library/MobileDevice/Provisioning Profile</code><br>没有对应目录时手动创建.</p>
+<p><code>/Users/用户名/Library/MobileDevice/Provisioning Profiles</code><br>拷贝到<br><code>/Users/Shared/Jenkins/Library/MobileDevice/Provisioning Profile</code><br>没有对应目录时手动创建.</p>
 <ul>
 <li>iOS编译证书找不到<br><code>Check dependencies
 Code Sign error: No codesigning identities found: No codesigning identities (i.e. certificate and private key pairs) that match the provisioning profile specified in your build settings
