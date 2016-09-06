@@ -301,17 +301,14 @@
         
           
             <ul>
-<li>iOS编译签名文件找不到<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Check dependencies Code Sign error: No matching provisioning profile found: Your build settings specify a provisioning profile with the UUID 75025357-245d-448b-9343-96148a0xxxxx, however, no such provisioning profile was found.</span><br></pre></td></tr></table></figure>
-</li>
+<li>iOS编译签名文件找不到</li>
 </ul>
+<p>Check dependencies Code Sign error: No matching provisioning profile found: Your build settings specify a provisioning profile with the UUID 75025357-245d-448b-9343-96148a0xxxxx, however, no such provisioning profile was found.</p>
 <p>原因是jenkins以jenkins用户身份运行，iOS项目编译用的签名文件要从安装证书时的用户目录</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/用户名/Library/MobileDevice/Provisioning Profiles</span><br></pre></td></tr></table></figure>
 <p>拷贝到</p>
-<figure class="highlight plain"><figcaption><span>Profile</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">没有对应目录时手动创建.</span><br><span class="line"></span><br><span class="line">- iOS编译证书找不到</span><br></pre></td></tr></table></figure>
-<p>Check dependencies Code Sign error: No codesigning identities found: No codesigning identities (i.e. certificate and private key pairs) that match the provisioning profile specified in your build settings<br>(“xxxxx”) were found.<br>```<br>解决办法<br>打开“钥匙串访问”，从“登录”拷贝安装的证书到“系统”下</p>
-<ul>
-<li>jenkins 启动<br><code>sudo -u jenkins /usr/bin/java -Dfile.encoding=UTF-8 -XX:PermSize=256m -XX:MaxPermSize=512m -Xms256m -Xmx512m -Djava.io.tmpdir=/Users/Shared/Jenkins/tmp -jar /Applications/Jenkins/jenkins2.war --httpPort=8080</code></li>
-</ul>
+<figure class="highlight plain"><figcaption><span>Profile</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">没有对应目录时手动创建.</span><br><span class="line"></span><br><span class="line">- iOS编译证书找不到</span><br><span class="line"></span><br><span class="line">Check dependencies Code Sign error: No codesigning identities found: No codesigning identities (i.e. certificate and private key pairs) that match the provisioning profile specified in your build settings</span><br><span class="line">(“xxxxx”) were found.</span><br><span class="line"></span><br><span class="line">解决办法</span><br><span class="line">打开“钥匙串访问”，从“登录”拷贝安装的证书到“系统”下</span><br><span class="line">- jenkins 启动</span><br></pre></td></tr></table></figure>
+<p>sudo -u jenkins /usr/bin/java -Dfile.encoding=UTF-8 -XX:PermSize=256m -XX:MaxPermSize=512m -Xms256m -Xmx512m -Djava.io.tmpdir=/Users/Shared/Jenkins/tmp -jar /Applications/Jenkins/jenkins2.war –httpPort=8080<br>```</p>
 
           
         
