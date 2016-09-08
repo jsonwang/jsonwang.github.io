@@ -69,8 +69,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="AK的园子" type="application/atom+xml" />
 
@@ -90,7 +88,7 @@
 <meta property="og:url" content="http://jsonwang.github.io/2016/09/06/使用Jenkins可能遇到的水坑/index.html">
 <meta property="og:site_name" content="AK的园子">
 <meta property="og:description" content="1,iOS编译签名文件找不到Check dependencies Code Sign error: No matching provisioning profile found: Your build settings specify a provisioning profile with the UUID 75025357-245d-448b-9343-96148a0xxxxx, however">
-<meta property="og:updated_time" content="2016-09-08T01:24:36.000Z">
+<meta property="og:updated_time" content="2016-09-08T01:26:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Jenkins可能遇到的水坑">
 <meta name="twitter:description" content="1,iOS编译签名文件找不到Check dependencies Code Sign error: No matching provisioning profile found: Your build settings specify a provisioning profile with the UUID 75025357-245d-448b-9343-96148a0xxxxx, however">
@@ -304,10 +302,7 @@
 <p>没有对应目录时手动创建.</p>
 <h4 id="2-iOS编译证书找不到"><a href="#2-iOS编译证书找不到" class="headerlink" title="2,iOS编译证书找不到"></a>2,iOS编译证书找不到</h4><p>Check dependencies Code Sign error: No codesigning identities found: No codesigning identities (i.e. certificate and private key pairs) that match the provisioning profile specified in your build settings<br>(“xxxxx”) were found.</p>
 <p>解决办法<br>打开“钥匙串访问”，从“登录”拷贝安装的证书到“系统”下</p>
-<ul>
-<li>jenkins 启动<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -u jenkins /usr/bin/java -Dfile.encoding=UTF-8 -XX:PermSize=256m -XX:MaxPermSize=512m -Xms256m -Xmx512m -Djava.io.tmpdir=/Users/Shared/Jenkins/tmp -jar /Applications/Jenkins/jenkins2.war --httpPort=8080</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<h4 id="3-jenkins-启动"><a href="#3-jenkins-启动" class="headerlink" title="3,jenkins 启动"></a>3,jenkins 启动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -u jenkins /usr/bin/java -Dfile.encoding=UTF-8 -XX:PermSize=256m -XX:MaxPermSize=512m -Xms256m -Xmx512m -Djava.io.tmpdir=/Users/Shared/Jenkins/tmp -jar /Applications/Jenkins/jenkins2.war --httpPort=8080</span><br></pre></td></tr></table></figure>
 <h6 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料:"></a>参考资料:</h6><ul>
 <li><a href="http://www.cocoachina.com/ios/20150728/12733.html" target="_blank" rel="external">iOS可持续化集成: Jenkins+bundler+cocoapods+fastlane</a></li>
 <li><a href="https://github.com/fastlane/fastlane/issues/360" target="_blank" rel="external">Jenkins: security: cert import failed: A default keychain could not be found</a></li>
@@ -476,7 +471,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-iOS编译签名文件找不到"><span class="nav-number">1.</span> <span class="nav-text">1,iOS编译签名文件找不到</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-iOS编译证书找不到"><span class="nav-number">2.</span> <span class="nav-text">2,iOS编译证书找不到</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#参考资料"><span class="nav-number">2.0.1.</span> <span class="nav-text">参考资料:</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-iOS编译签名文件找不到"><span class="nav-number">1.</span> <span class="nav-text">1,iOS编译签名文件找不到</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-iOS编译证书找不到"><span class="nav-number">2.</span> <span class="nav-text">2,iOS编译证书找不到</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-jenkins-启动"><span class="nav-number">3.</span> <span class="nav-text">3,jenkins 启动</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#参考资料"><span class="nav-number">3.0.1.</span> <span class="nav-text">参考资料:</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
