@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jsonwang.github.io/"/>
-  <updated>2016-09-08T01:26:47.000Z</updated>
+  <updated>2016-09-17T16:07:48.000Z</updated>
   <id>http://jsonwang.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>适配iOS10以及Xcode8</title>
+    <link href="http://jsonwang.github.io/2016/09/17/%E9%80%82%E9%85%8DiOS10%E4%BB%A5%E5%8F%8AXcode8/"/>
+    <id>http://jsonwang.github.io/2016/09/17/适配iOS10以及Xcode8/</id>
+    <published>2016-09-17T15:30:39.000Z</published>
+    <updated>2016-09-17T16:07:48.000Z</updated>
+    
+    <content type="html">&lt;h5 id=&quot;一、证书管理&quot;&gt;&lt;a href=&quot;#一、证书管理&quot; class=&quot;headerlink&quot; title=&quot;一、证书管理&quot;&gt;&lt;/a&gt;一、证书管理&lt;/h5&gt;&lt;p&gt;用Xcode8打开工程后，比较明显的就是下图了，这个是苹果的新特性，可以帮助我们自动管理证书(Automatically manage signing),不过不建议使用尤其是多人开发的时候,多人员操作这个功能会让后台证书管理很混乱.&lt;/p&gt;
+&lt;h5 id=&quot;二、Xib文件的注意事项&quot;&gt;&lt;a href=&quot;#二、Xib文件的注意事项&quot; class=&quot;headerlink&quot; title=&quot;二、Xib文件的注意事项&quot;&gt;&lt;/a&gt;二、Xib文件的注意事项&lt;/h5&gt;&lt;p&gt;使用Xcode8打开xib文件后，会出现下图的提示。&lt;br&gt;大家选择Choose Device即可。&lt;br&gt;&lt;img src=&quot;/images/xcode8.0/xib/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;之后大家会发现布局啊，frame乱了，只需要更新一下frame即可。如下图&lt;br&gt;&lt;img src=&quot;/images/xcode8.0/xib/2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;注意：如果按上面的步骤操作后，在用Xcode7打开Xib会报一下错误，&lt;br&gt;&lt;img src=&quot;/images/xcode8.0/xib/3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;解决办法：需要删除Xib里面&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;capability name=&amp;quot;documents saved in the Xcode 8 format&amp;quot; minToolsVersion=&amp;quot;8.0&amp;quot;/&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这句话，以及把&amp;lt; document &amp;gt;中的toolsVersion和&amp;lt; plugIn &amp;gt;中的version改成你正常的xib文件中的值，不过不建议这么做，在Xcode8出来后，希望大家都快速上手，全员更新。这就跟Xcode5到Xcode6一样，有变动，但是还是要尽早学习，尽快适应哟！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h5 id=&quot;一、证书管理&quot;&gt;&lt;a href=&quot;#一、证书管理&quot; class=&quot;headerlink&quot; title=&quot;一、证书管理&quot;&gt;&lt;/a&gt;一、证书管理&lt;/h5&gt;&lt;p&gt;用Xcode8打开工程后，比较明显的就是下图了，这个是苹果的新特性，可以帮助我们自动管理证书(Automat
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>使用Jenkins可能遇到的水坑</title>
