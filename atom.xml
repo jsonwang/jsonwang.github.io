@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jsonwang.github.io/"/>
-  <updated>2016-09-17T17:48:13.000Z</updated>
+  <updated>2016-09-18T01:30:21.000Z</updated>
   <id>http://jsonwang.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://jsonwang.github.io/2016/09/17/%E9%80%82%E9%85%8DiOS10%E4%BB%A5%E5%8F%8AXcode8/"/>
     <id>http://jsonwang.github.io/2016/09/17/适配iOS10以及Xcode8/</id>
     <published>2016-09-17T15:30:39.000Z</published>
-    <updated>2016-09-17T17:48:13.000Z</updated>
+    <updated>2016-09-18T01:30:21.000Z</updated>
     
     <content type="html">&lt;h5 id=&quot;一、证书管理&quot;&gt;&lt;a href=&quot;#一、证书管理&quot; class=&quot;headerlink&quot; title=&quot;一、证书管理&quot;&gt;&lt;/a&gt;一、证书管理&lt;/h5&gt;&lt;p&gt;用Xcode8打开工程后，比较明显的就是下图了，这个是苹果的新特性，可以帮助我们自动管理证书(Automatically manage signing),不过不建议使用尤其是多人开发的时候,多人员操作这个功能会让后台证书管理很混乱.&lt;/p&gt;
 &lt;h5 id=&quot;二、Xib文件的注意事项&quot;&gt;&lt;a href=&quot;#二、Xib文件的注意事项&quot; class=&quot;headerlink&quot; title=&quot;二、Xib文件的注意事项&quot;&gt;&lt;/a&gt;二、Xib文件的注意事项&lt;/h5&gt;&lt;p&gt;使用Xcode8打开xib文件后，会出现下图的提示。&lt;br&gt;大家选择Choose Device即可。&lt;br&gt;&lt;img src=&quot;/images/xcode8.0/xib/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -49,7 +49,11 @@
 &lt;h5 id=&quot;九-iOS-10-UITextContentType&quot;&gt;&lt;a href=&quot;#九-iOS-10-UITextContentType&quot; class=&quot;headerlink&quot; title=&quot;九,iOS 10 UITextContentType&quot;&gt;&lt;/a&gt;九,iOS 10 UITextContentType&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// The textContentType property is to provide the keyboard with extra information about the semantic intent of the text document.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@property(nonatomic,copy) UITextContentType textContentType NS_AVAILABLE_IOS(10_0); // default is nil&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;在iOS 10 UITextField添加了textContentType枚举，指示文本输入区域所期望的语义意义。&lt;/p&gt;
 &lt;p&gt;使用此属性可以给键盘和系统信息，关于用户输入的内容的预期的语义意义。例如，您可以指定一个文本字段，用户填写收到一封电子邮件确认uitextcontenttypeemailaddress。当您提供有关您期望用户在文本输入区域中输入的内容的信息时，系统可以在某些情况下自动选择适当的键盘，并提高键盘修正和主动与其他文本输入机会的整合。&lt;/p&gt;
-&lt;h5 id=&quot;十-Xcode-8-插件不能用的问题&quot;&gt;&lt;a href=&quot;#十-Xcode-8-插件不能用的问题&quot; class=&quot;headerlink&quot; title=&quot;十,Xcode 8 插件不能用的问题&quot;&gt;&lt;/a&gt;十,Xcode 8 插件不能用的问题&lt;/h5&gt;&lt;p&gt;&lt;a href=&quot;http://vongloo.me/2016/09/10/Make-Your-Xcode8-Great-Again/?utm_source=tuicool&amp;amp;utm_medium=referral&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;让你的 Xcode8 继续使用插件&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&quot;十-Xcode-8-插件不能用的问题&quot;&gt;&lt;a href=&quot;#十-Xcode-8-插件不能用的问题&quot; class=&quot;headerlink&quot; title=&quot;十,Xcode 8 插件不能用的问题&quot;&gt;&lt;/a&gt;十,Xcode 8 插件不能用的问题&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1,sudo gem install -n /usr/local/bin update_xcode_plugins&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&quot;/images/xcode8.0/plugins/1.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;2,update_xcode_plugins&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/xcode8.0/plugins/2.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;3,update_xcode_plugins --unsign&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;使用上下键选择xcode8 时间有点长,完成后会在application中多一个 Xcode-unsigned 这个就可以正常使用插件了&lt;br&gt;&lt;img src=&quot;/images/xcode8.0/plugins/3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://vongloo.me/2016/09/10/Make-Your-Xcode8-Great-Again/?utm_source=tuicool&amp;amp;utm_medium=referral&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;让你的 Xcode8 继续使用插件&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;See https://github.com/alcatraz/Alcatraz/issues/475&quot;&gt;@see https://github.com/alcatraz/Alcatraz/issues/475&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS10.html#//apple_ref/doc/uid/TP40017084-SW1&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS 10 苹果官方文档&lt;/a&gt;&lt;/p&gt;
 </content>
     
