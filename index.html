@@ -318,8 +318,19 @@
 </ul>
 <p><a href="https://developer.apple.com/reference/usernotifications" target="_blank" rel="external">UserNotifications: 苹果官方文档 </a><br><a href="https://developer.apple.com/videos/play/wwdc2016/707/" target="_blank" rel="external">苹果官方视频1</a><br><a href="https://developer.apple.com/videos/play/wwdc2016/708/" target="_blank" rel="external">苹果官方视频2</a><br><a href="https://developer.apple.com/videos/play/wwdc2016/724/" target="_blank" rel="external">苹果官方视频3</a><br>[WWDC2016 Session笔记 - iOS 10 推送Notification新]特性(<a href="http://www.jianshu.com/p/9b720efe3779" target="_blank" rel="external">http://www.jianshu.com/p/9b720efe3779</a>)</p>
 <h4 id="四-ATS的问题"><a href="#四-ATS的问题" class="headerlink" title="四,ATS的问题"></a>四,ATS的问题</h4><p>iOS 9中默认非HTTS的网络是被禁止的，当然我们也可以把NSAllowsArbitraryLoads设置为YES禁用ATS。不过iOS 10从2017年1月1日起苹果不允许我们通过这个方法跳过ATS，也就是说强制我们用HTTPS，如果不这样的话提交App可能会被拒绝。但是我们可以通过NSExceptionDomains来针对特定的域名开放HTTP可以容易通过审核。</p>
-<h4 id="五-iOS-10-隐私权限设置"><a href="#五-iOS-10-隐私权限设置" class="headerlink" title="五,iOS 10 隐私权限设置"></a>五,iOS 10 隐私权限设置</h4><p>iOS 10 开始对隐私权限更加严格，如果你不设置就会直接崩溃，现在很多遇到崩溃问题了，一般解决办法都是在info.plist文件添加对应的Key-Value就可以了。<br><img src="/images/xcode8.0/privacy.png" alt=""><br>上图的访问相册的Key添加错了，正确的是Privacy - Photo Library Usage Description。</p>
-<p>以上Value值，圈出的红线部分的文字是展示给用户看的，必须添加。目前解决办法基本都一样，参考学习文章如下：<br><a href="http://www.jianshu.com/p/616240463a7a" target="_blank" rel="external">兼容iOS 10：配置获取隐私数据权限声明</a><br><a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank" rel="external">Full list of Info.plist keys</a></p>
+<h4 id="五-iOS-10-隐私权限设置"><a href="#五-iOS-10-隐私权限设置" class="headerlink" title="五,iOS 10 隐私权限设置"></a>五,iOS 10 隐私权限设置</h4><p>iOS 10 开始对隐私权限更加严格，如果你不设置就会直接崩溃，现在很多遇到崩溃问题了，一般解决办法都是在info.plist文件添加对应的Key-Value就可以了。</p>
+<ul>
+<li>麦克风权限：Privacy - Microphone Usage Description 是否允许此App使用你的麦克风？</li>
+<li>相机权限： Privacy - Camera Usage Description 是否允许此App使用你的相机？</li>
+<li>相册权限： Privacy - Photo Library Usage Description 是否允许此App访问你的媒体资料库？</li>
+<li>通讯录权限： Privacy - Contacts Usage Description 是否允许此App访问你的通讯录？</li>
+<li>蓝牙权限：Privacy - Bluetooth Peripheral Usage Description 是否许允此App使用蓝牙？</li>
+<li>语音转文字权限：Privacy - Speech Recognition Usage Description 是否允许此App使用语音识别？</li>
+<li>日历权限：Privacy - Calendars Usage Description 是否允许此App使用日历？</li>
+<li>定位权限：Privacy - Location When In Use Usage Description 我们需要通过您的地理位置信息获取您周边的相关数据</li>
+<li>定位权限: Privacy - Location Always Usage Description 我们需要通过您的地理位置信息获取您周边的相关数据</li>
+</ul>
+<p>参考学习文章如下：<br><a href="http://www.jianshu.com/p/616240463a7a" target="_blank" rel="external">兼容iOS 10：配置获取隐私数据权限声明</a><br><a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank" rel="external">Full list of Info.plist keys</a></p>
 <h4 id="六-Xcode-8-运行一堆没用的logs解决办法"><a href="#六-Xcode-8-运行一堆没用的logs解决办法" class="headerlink" title="六,Xcode 8 运行一堆没用的logs解决办法"></a>六,Xcode 8 运行一堆没用的logs解决办法</h4><p><img src="/images/xcode8.0/bug1.jpg" alt=""><br>上图我们看到，自己新建的一个工程啥也没干就打印一堆烂七八糟的东西，我觉得这个应该是Xcode 8的问题，具体也没细研究，解决办法是设置OS_ACTIVITY_MODE : disable如下图:<br><img src="/images/xcode8.0/bug2.jpg" alt=""><br><a href="http://stackoverflow.com/questions/37800790/hide-strange-unwanted-xcode-8-logs" target="_blank" rel="external">@see stackoverflow问答 </a></p>
 <h4 id="七-iOS-10-UICollectionView-性能优化"><a href="#七-iOS-10-UICollectionView-性能优化" class="headerlink" title="七,iOS 10 UICollectionView 性能优化"></a>七,iOS 10 UICollectionView 性能优化</h4><p>随着开发者对UICollectionView的信赖，项目中用的地方也比较多，但是还是存在一些问题，比如有时会卡顿、加载慢等。所以iOS 10 对UICollectionView进一步的优化，因为叙述起来比较复杂耗费时间，在这里只提供学习参考文章如下：<br><a href="http://www.jianshu.com/p/e97780a24224" target="_blank" rel="external">WWDC2016 Session笔记 - iOS 10 UICollectionView新特性</a></p>
 <h4 id="八-iOS-10-UIColor-新增方法"><a href="#八-iOS-10-UIColor-新增方法" class="headerlink" title="八,iOS 10 UIColor 新增方法"></a>八,iOS 10 UIColor 新增方法</h4><p>因为之前我们都是用RGB来设置颜色，反正用起来也不是特别多样化，这次新增的方法应该就是一个弥补吧。所以在iOS 10 苹果官方建议我们使用sRGB，因为它性能更好，色彩更丰富。如果你自己为UIColor写了一套分类的话也可尝试替换为sRGB，UIColor类中新增了两个Api如下:</p>
