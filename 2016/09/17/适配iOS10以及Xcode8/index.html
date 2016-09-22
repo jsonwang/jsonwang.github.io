@@ -100,7 +100,7 @@
 <meta property="og:image" content="http://jsonwang.github.io/images/xcode8.0/plugins/1.png">
 <meta property="og:image" content="http://jsonwang.github.io/images/xcode8.0/plugins/2.png">
 <meta property="og:image" content="http://jsonwang.github.io/images/xcode8.0/plugins/3.png">
-<meta property="og:updated_time" content="2016-09-22T10:53:04.000Z">
+<meta property="og:updated_time" content="2016-09-22T10:54:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="适配iOS10以及Xcode8">
 <meta name="twitter:description" content="一、证书管理用Xcode8打开工程后，比较明显的就是下图了，这个是苹果的新特性，可以帮助我们自动管理证书(Automatically manage signing),不过不建议使用尤其是多人开发的时候,多人员操作这个功能会让后台证书管理很混乱.
@@ -337,8 +337,7 @@
 <li>语音转文字权限：Privacy - Speech Recognition Usage Description 是否允许此App使用语音识别？</li>
 <li>日历权限：Privacy - Calendars Usage Description 是否允许此App使用日历？</li>
 <li>定位权限：Privacy - Location When In Use Usage Description 我们需要通过您的地理位置信息获取您周边的相关数据</li>
-<li>定位权限: Privacy - Location Always Usage Description 我们需要通过您的地理位置信息获取您周边的相关数据</li>
-<li>音乐库权限: Privacy - Media Library Usage Description </li>
+<li>音乐库权限: Privacy - Media Library Usage Description</li>
 </ul>
 <p>参考学习文章如下：<br><a href="http://www.jianshu.com/p/616240463a7a" target="_blank" rel="external">兼容iOS 10：配置获取隐私数据权限声明</a><br><a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html" target="_blank" rel="external">Full list of Info.plist keys</a></p>
 <h4 id="六-Xcode-8-运行一堆没用的logs解决办法"><a href="#六-Xcode-8-运行一堆没用的logs解决办法" class="headerlink" title="六,Xcode 8 运行一堆没用的logs解决办法"></a>六,Xcode 8 运行一堆没用的logs解决办法</h4><p><img src="/images/xcode8.0/bug1.jpg" alt=""><br>上图我们看到，自己新建的一个工程啥也没干就打印一堆烂七八糟的东西，我觉得这个应该是Xcode 8的问题，具体也没细研究，解决办法是设置OS_ACTIVITY_MODE : disable如下图:<br><img src="/images/xcode8.0/bug2.jpg" alt=""><br><a href="http://stackoverflow.com/questions/37800790/hide-strange-unwanted-xcode-8-logs" target="_blank" rel="external">@see stackoverflow问答 </a></p>
