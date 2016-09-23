@@ -59,10 +59,10 @@
     <link href="http://jsonwang.github.io/2016/09/17/%E9%80%82%E9%85%8DiOS10%E4%BB%A5%E5%8F%8AXcode8/"/>
     <id>http://jsonwang.github.io/2016/09/17/适配iOS10以及Xcode8/</id>
     <published>2016-09-17T15:30:39.000Z</published>
-    <updated>2016-09-23T09:00:58.000Z</updated>
+    <updated>2016-09-23T09:47:34.000Z</updated>
     
     <content type="html">&lt;h4 id=&quot;一、证书管理&quot;&gt;&lt;a href=&quot;#一、证书管理&quot; class=&quot;headerlink&quot; title=&quot;一、证书管理&quot;&gt;&lt;/a&gt;一、证书管理&lt;/h4&gt;&lt;p&gt;用Xcode8打开工程后，比较明显的就是下图了，这个是苹果的新特性，可以帮助我们自动管理证书(Automatically manage signing),不过不建议使用尤其是多人开发的时候,多人员操作这个功能会让后台证书管理很混乱.&lt;/p&gt;
-&lt;h4 id=&quot;二、Xib文件的注意事项&quot;&gt;&lt;a href=&quot;#二、Xib文件的注意事项&quot; class=&quot;headerlink&quot; title=&quot;二、Xib文件的注意事项&quot;&gt;&lt;/a&gt;二、Xib文件的注意事项&lt;/h4&gt;&lt;p&gt;使用Xcode8打开xib文件后，会出现下图的提示。&lt;br&gt;大家选择Choose Device即可。&lt;br&gt;&lt;img src=&quot;/images/xcode8.0/xib/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;二、Xib文件的注意事项&quot;&gt;&lt;a href=&quot;#二、Xib文件的注意事项&quot; class=&quot;headerlink&quot; title=&quot;二、Xib文件的注意事项&quot;&gt;&lt;/a&gt;二、Xib文件的注意事项&lt;/h4&gt;&lt;p&gt;使用Xcode8打开xib文件后，会出现下图的提示。&lt;br&gt;大家选择Choose Device即可。&lt;br&gt;&lt;img src=&quot;/images/xcode8.0/xib/1.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;之后大家会发现布局啊，frame乱了，只需要更新一下frame即可。如下图&lt;br&gt;&lt;img src=&quot;/images/xcode8.0/xib/2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;注意：如果按上面的步骤操作后，在用Xcode7打开Xib会报一下错误，&lt;br&gt;&lt;img src=&quot;/images/xcode8.0/xib/3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;解决办法：需要删除Xib里面&lt;/p&gt;
@@ -117,7 +117,8 @@
     
     <summary type="html">
     
-      &lt;h4 id=&quot;一、证书管理&quot;&gt;&lt;a href=&quot;#一、证书管理&quot; class=&quot;headerlink&quot; title=&quot;一、证书管理&quot;&gt;&lt;/a&gt;一、证书管理&lt;/h4&gt;&lt;p&gt;用Xcode8打开工程后，比较明显的就是下图了，这个是苹果的新特性，可以帮助我们自动管理证书(Automat
+      &lt;h4 id=&quot;一、证书管理&quot;&gt;&lt;a href=&quot;#一、证书管理&quot; class=&quot;headerlink&quot; title=&quot;一、证书管理&quot;&gt;&lt;/a&gt;一、证书管理&lt;/h4&gt;&lt;p&gt;用Xcode8打开工程后，比较明显的就是下图了，这个是苹果的新特性，可以帮助我们自动管理证书(Automatically manage signing),不过不建议使用尤其是多人开发的时候,多人员操作这个功能会让后台证书管理很混乱.&lt;/p&gt;
+&lt;h4 id=&quot;二、Xib文件的注意事项&quot;&gt;&lt;a href=&quot;#二、Xib文件的注意事项&quot; class=&quot;headerlink&quot; title=&quot;二、Xib文件的注意事项&quot;&gt;&lt;/a&gt;二、Xib文件的注意事项&lt;/h4&gt;&lt;p&gt;使用Xcode8打开xib文件后，会出现下图的提示。&lt;br&gt;大家选择Choose Device即可。&lt;br&gt;&lt;img src=&quot;/images/xcode8.0/xib/1.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
     
     </summary>
     
