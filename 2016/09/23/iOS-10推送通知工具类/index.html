@@ -1,0 +1,682 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="AK,ak,Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="AK的园子" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="使用方法 在didFinishLaunchingWithOptions中调用123456- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions&amp;#123;    [self registerForRemoteNotificationCon">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS 10推送通知工具类">
+<meta property="og:url" content="http://jsonwang.github.io/2016/09/23/iOS-10推送通知工具类/index.html">
+<meta property="og:site_name" content="AK的园子">
+<meta property="og:description" content="使用方法 在didFinishLaunchingWithOptions中调用123456- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions&amp;#123;    [self registerForRemoteNotificationCon">
+<meta property="og:updated_time" content="2016-09-23T08:53:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS 10推送通知工具类">
+<meta name="twitter:description" content="使用方法 在didFinishLaunchingWithOptions中调用123456- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions&amp;#123;    [self registerForRemoteNotificationCon">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> iOS 10推送通知工具类 | AK的园子 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AK的园子</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">王道无愧华夏心，成功都是拼搏勤。无视对手傲乾坤，敌对双目霸镇魂！</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iOS 10推送通知工具类
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-23T16:49:24+08:00" content="2016-09-23">
+              2016-09-23
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/23/iOS-10推送通知工具类/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/23/iOS-10推送通知工具类/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/23/iOS-10推送通知工具类/" class="leancloud_visitors" data-flag-title="iOS 10推送通知工具类">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>使用方法 在didFinishLaunchingWithOptions中调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</span><br><span class="line">&#123;</span><br><span class="line">    [self registerForRemoteNotificationConfig:launchOptions];</span><br><span class="line"></span><br><span class="line">    return YES;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>PLAppDelegate+RemoteNotification.h</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  PLAppDelegate+RemoteNotification.h</span><br><span class="line">//  PL</span><br><span class="line">//</span><br><span class="line">//  Created by AK on 16/6/25.</span><br><span class="line">//  Copyright © 2016年 Catch app. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &quot;AppDelegate.h&quot;</span><br><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line">#import &lt;UserNotifications/UserNotifications.h&gt;</span><br><span class="line">@interface AppDelegate (RemoteNotification)&lt;UNUserNotificationCenterDelegate&gt;</span><br><span class="line">- (void)registerForRemoteNotificationConfig:(NSDictionary *)launchOptions;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>PLAppDelegate+RemoteNotification.m</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  PLAppDelegate+RemoteNotification.m</span><br><span class="line">//  PL</span><br><span class="line">//</span><br><span class="line">//  Created by AK on 16/6/25.</span><br><span class="line">//  Copyright © 2016年 Catch app. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &quot;PLAppDelegate+RemoteNotification.h&quot;</span><br><span class="line"></span><br><span class="line">#define NXSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v) \</span><br><span class="line">([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)</span><br><span class="line"></span><br><span class="line">@implementation AppDelegate (RemoteNotification)</span><br><span class="line">- (void)registerForRemoteNotificationConfig:(NSDictionary *)launchOptions;</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">//编译环境判断,</span><br><span class="line">#if __IPHONE_OS_VERSION_MAX_ALLOWED &gt;= __IPHONE_10_0 //ios10+</span><br><span class="line"></span><br><span class="line">    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];</span><br><span class="line">    center.delegate = self;</span><br><span class="line">    [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound |</span><br><span class="line">                                             UNAuthorizationOptionAlert)</span><br><span class="line">                          completionHandler:^(BOOL granted, NSError *_Nullable error) &#123;</span><br><span class="line"></span><br><span class="line">                                NSLog(@&quot;request authorization %@&quot;,error);</span><br><span class="line"></span><br><span class="line">                          &#125;];</span><br><span class="line"></span><br><span class="line">    [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings *_Nonnull settings) &#123;</span><br><span class="line">        NSLog(@&quot;用户选择后结果:%@&quot;, settings);</span><br><span class="line">    &#125;];</span><br><span class="line"></span><br><span class="line">#elif __IPHONE_OS_VERSION_MAX_ALLOWED &gt;= __IPHONE_8_0 //ios8+</span><br><span class="line">    if (NXSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@&quot;8.0&quot;))</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        UIMutableUserNotificationCategory *categorys = [[UIMutableUserNotificationCategory alloc] init];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        UIUserNotificationSettings *userSettings = [UIUserNotificationSettings</span><br><span class="line">                                                    settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert</span><br><span class="line">                                                    categories:[NSSet setWithObject:categorys]];</span><br><span class="line">        [[UIApplication sharedApplication] registerRemoteNotificationAndUserNotificationSettings:userSettings];</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        // register remoteNotification types</span><br><span class="line">        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound |</span><br><span class="line">         UIRemoteNotificationTypeAlert];</span><br><span class="line">    &#125;</span><br><span class="line">#else</span><br><span class="line"></span><br><span class="line">    // register remoteNotification types</span><br><span class="line">    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound |</span><br><span class="line">     UIRemoteNotificationTypeAlert];</span><br><span class="line"></span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    [[UIApplication sharedApplication] registerForRemoteNotifications];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    NSString *token = [NSString stringWithFormat:@&quot;%@&quot;, deviceToken];</span><br><span class="line">    NSLog(@&quot;原TOKEN %@&quot;, token);</span><br><span class="line">    token = [token stringByReplacingOccurrencesOfString:@&quot; &quot; withString:@&quot;&quot;];</span><br><span class="line">    token = [token stringByReplacingOccurrencesOfString:@&quot;&lt;&quot; withString:@&quot;&quot;];</span><br><span class="line">    token = [token stringByReplacingOccurrencesOfString:@&quot;&gt;&quot; withString:@&quot;&quot;];</span><br><span class="line">    NSLog(@&quot;截取后TOKEN %@&quot;, token);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err</span><br><span class="line">&#123;</span><br><span class="line">    NSLog(@&quot;apns -&gt; 注册推送功能时发生错误， 错误信息:\n %@&quot;, err);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#pragma mark - ios7 UIApplicationDelegate 接收到通知</span><br><span class="line">//注意error, but you still need to add &quot;remote-notification&quot; to the list of your supported UIBackgroundModes in your Info.plist</span><br><span class="line">- (void)application:(UIApplication *)application</span><br><span class="line">didReceiveRemoteNotification:(NSDictionary *)userInfo</span><br><span class="line">fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler</span><br><span class="line">&#123;</span><br><span class="line">    // IOS 7 Support Required</span><br><span class="line">    NSLog(@&quot;======== apns -&gt; didReceiveRemoteNotification,Receive Data:\n%@&quot;, userInfo);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#if __IPHONE_OS_VERSION_MAX_ALLOWED &gt;= __IPHONE_10_0 //ios10+</span><br><span class="line">#pragma mark - ios10+ UNUserNotificationCenterDelegate 接收到通知</span><br><span class="line">- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler &#123;</span><br><span class="line">    //应用在前台收到通知</span><br><span class="line">    NSLog(@&quot;======== apns -&gt;%@&quot;, notification);</span><br><span class="line">&#125;</span><br><span class="line">- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler &#123;</span><br><span class="line">    //点击通知进入应用</span><br><span class="line">    NSLog(@&quot;======== apns -&gt;%@&quot;, response);</span><br><span class="line">&#125;</span><br><span class="line">#endif</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/17/适配iOS10以及Xcode8/" rel="next" title="适配iOS10以及Xcode8">
+                <i class="fa fa-chevron-left"></i> 适配iOS10以及Xcode8
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/23/iOS-10推送通知工具类/"
+           data-title="iOS 10推送通知工具类" data-url="http://jsonwang.github.io/2016/09/23/iOS-10推送通知工具类/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="AK" />
+          <p class="site-author-name" itemprop="name">AK</p>
+          <p class="site-description motion-element" itemprop="description">iOS 开发者</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AK</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"beijingak"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("BiPcHCcdJIEYf3zrGoXJMq2B-gzGzoHsz", "mdJ0sq1UkM7cKzD7jHcKtqk6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

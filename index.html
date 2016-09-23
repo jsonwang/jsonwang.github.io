@@ -221,6 +221,124 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/23/iOS-10推送通知工具类/" itemprop="url">
+                  iOS 10推送通知工具类
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-23T16:49:24+08:00" content="2016-09-23">
+              2016-09-23
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/23/iOS-10推送通知工具类/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/23/iOS-10推送通知工具类/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/23/iOS-10推送通知工具类/" class="leancloud_visitors" data-flag-title="iOS 10推送通知工具类">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用方法 在didFinishLaunchingWithOptions中调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</span><br><span class="line">&#123;</span><br><span class="line">    [self registerForRemoteNotificationConfig:launchOptions];</span><br><span class="line"></span><br><span class="line">    return YES;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>PLAppDelegate+RemoteNotification.h</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  PLAppDelegate+RemoteNotification.h</span><br><span class="line">//  PL</span><br><span class="line">//</span><br><span class="line">//  Created by AK on 16/6/25.</span><br><span class="line">//  Copyright © 2016年 Catch app. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &quot;AppDelegate.h&quot;</span><br><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line">#import &lt;UserNotifications/UserNotifications.h&gt;</span><br><span class="line">@interface AppDelegate (RemoteNotification)&lt;UNUserNotificationCenterDelegate&gt;</span><br><span class="line">- (void)registerForRemoteNotificationConfig:(NSDictionary *)launchOptions;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>PLAppDelegate+RemoteNotification.m</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  PLAppDelegate+RemoteNotification.m</span><br><span class="line">//  PL</span><br><span class="line">//</span><br><span class="line">//  Created by AK on 16/6/25.</span><br><span class="line">//  Copyright © 2016年 Catch app. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &quot;PLAppDelegate+RemoteNotification.h&quot;</span><br><span class="line"></span><br><span class="line">#define NXSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v) \</span><br><span class="line">([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)</span><br><span class="line"></span><br><span class="line">@implementation AppDelegate (RemoteNotification)</span><br><span class="line">- (void)registerForRemoteNotificationConfig:(NSDictionary *)launchOptions;</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">//编译环境判断,</span><br><span class="line">#if __IPHONE_OS_VERSION_MAX_ALLOWED &gt;= __IPHONE_10_0 //ios10+</span><br><span class="line"></span><br><span class="line">    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];</span><br><span class="line">    center.delegate = self;</span><br><span class="line">    [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound |</span><br><span class="line">                                             UNAuthorizationOptionAlert)</span><br><span class="line">                          completionHandler:^(BOOL granted, NSError *_Nullable error) &#123;</span><br><span class="line"></span><br><span class="line">                                NSLog(@&quot;request authorization %@&quot;,error);</span><br><span class="line"></span><br><span class="line">                          &#125;];</span><br><span class="line"></span><br><span class="line">    [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings *_Nonnull settings) &#123;</span><br><span class="line">        NSLog(@&quot;用户选择后结果:%@&quot;, settings);</span><br><span class="line">    &#125;];</span><br><span class="line"></span><br><span class="line">#elif __IPHONE_OS_VERSION_MAX_ALLOWED &gt;= __IPHONE_8_0 //ios8+</span><br><span class="line">    if (NXSYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@&quot;8.0&quot;))</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        UIMutableUserNotificationCategory *categorys = [[UIMutableUserNotificationCategory alloc] init];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        UIUserNotificationSettings *userSettings = [UIUserNotificationSettings</span><br><span class="line">                                                    settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert</span><br><span class="line">                                                    categories:[NSSet setWithObject:categorys]];</span><br><span class="line">        [[UIApplication sharedApplication] registerRemoteNotificationAndUserNotificationSettings:userSettings];</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        // register remoteNotification types</span><br><span class="line">        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound |</span><br><span class="line">         UIRemoteNotificationTypeAlert];</span><br><span class="line">    &#125;</span><br><span class="line">#else</span><br><span class="line"></span><br><span class="line">    // register remoteNotification types</span><br><span class="line">    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound |</span><br><span class="line">     UIRemoteNotificationTypeAlert];</span><br><span class="line"></span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    [[UIApplication sharedApplication] registerForRemoteNotifications];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    NSString *token = [NSString stringWithFormat:@&quot;%@&quot;, deviceToken];</span><br><span class="line">    NSLog(@&quot;原TOKEN %@&quot;, token);</span><br><span class="line">    token = [token stringByReplacingOccurrencesOfString:@&quot; &quot; withString:@&quot;&quot;];</span><br><span class="line">    token = [token stringByReplacingOccurrencesOfString:@&quot;&lt;&quot; withString:@&quot;&quot;];</span><br><span class="line">    token = [token stringByReplacingOccurrencesOfString:@&quot;&gt;&quot; withString:@&quot;&quot;];</span><br><span class="line">    NSLog(@&quot;截取后TOKEN %@&quot;, token);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err</span><br><span class="line">&#123;</span><br><span class="line">    NSLog(@&quot;apns -&gt; 注册推送功能时发生错误， 错误信息:\n %@&quot;, err);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#pragma mark - ios7 UIApplicationDelegate 接收到通知</span><br><span class="line">//注意error, but you still need to add &quot;remote-notification&quot; to the list of your supported UIBackgroundModes in your Info.plist</span><br><span class="line">- (void)application:(UIApplication *)application</span><br><span class="line">didReceiveRemoteNotification:(NSDictionary *)userInfo</span><br><span class="line">fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler</span><br><span class="line">&#123;</span><br><span class="line">    // IOS 7 Support Required</span><br><span class="line">    NSLog(@&quot;======== apns -&gt; didReceiveRemoteNotification,Receive Data:\n%@&quot;, userInfo);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#if __IPHONE_OS_VERSION_MAX_ALLOWED &gt;= __IPHONE_10_0 //ios10+</span><br><span class="line">#pragma mark - ios10+ UNUserNotificationCenterDelegate 接收到通知</span><br><span class="line">- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler &#123;</span><br><span class="line">    //应用在前台收到通知</span><br><span class="line">    NSLog(@&quot;======== apns -&gt;%@&quot;, notification);</span><br><span class="line">&#125;</span><br><span class="line">- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler &#123;</span><br><span class="line">    //点击通知进入应用</span><br><span class="line">    NSLog(@&quot;======== apns -&gt;%@&quot;, response);</span><br><span class="line">&#125;</span><br><span class="line">#endif</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/17/适配iOS10以及Xcode8/" itemprop="url">
                   适配iOS10以及Xcode8
                 </a>
@@ -928,143 +1046,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/21/Swift学习资料汇总/" itemprop="url">
-                  Swift学习资料汇总
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-21T02:14:12+08:00" content="2016-04-21">
-              2016-04-21
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Swift/" itemprop="url" rel="index">
-                    <span itemprop="name">Swift</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/21/Swift学习资料汇总/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/21/Swift学习资料汇总/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/04/21/Swift学习资料汇总/" class="leancloud_visitors" data-flag-title="Swift学习资料汇总">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Swift-github-开源项目"><a href="#Swift-github-开源项目" class="headerlink" title="Swift github 开源项目"></a>Swift github 开源项目</h2><ul>
-<li><a href="http://www.aswifter.com/2015/07/26/use-swiftdate/">SwiftDate：Swift中的日期处理库</a></li>
-<li><a href="https://github.com/Alamofire/Alamofire">Alamofire-Swift实现的HTTP请求库</a></li>
-<li><a href="https://github.com/SwiftyJSON/SwiftyJSON">SwiftyJSON-Swift版Json处理库</a></li>
-<li><a href="https://github.com/ankurp/Dollar">Dollar-函数式编程辅助库</a></li>
-<li><a href="https://github.com/ReactKit/SwiftTask">SwiftTask-Swift实现Promise模式</a></li>
-<li><a href="https://github.com/Haneke/HanekeSwift">HanekeSwift-轻量级的缓存实现</a>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/21/Swift学习资料汇总/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1110,7 +1091,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
