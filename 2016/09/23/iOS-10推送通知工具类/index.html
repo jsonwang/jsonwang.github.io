@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="AK,ak,Hexo, NexT" />
+  <meta name="keywords" content="Xcode8,iOS10,Notification(通知)," />
 
 
 
@@ -82,16 +82,19 @@
 
 
 
-<meta name="description" content="使用方法 在didFinishLaunchingWithOptions中调用123456- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions&amp;#123;    [self registerForRemoteNotificationCon">
+<meta name="description" content="使用方法 在didFinishLaunchingWithOptions中调用
+123456- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions&amp;#123;    [self registerForRemoteNotificationC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS 10推送通知工具类">
 <meta property="og:url" content="http://jsonwang.github.io/2016/09/23/iOS-10推送通知工具类/index.html">
 <meta property="og:site_name" content="AK的园子">
-<meta property="og:description" content="使用方法 在didFinishLaunchingWithOptions中调用123456- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions&amp;#123;    [self registerForRemoteNotificationCon">
-<meta property="og:updated_time" content="2016-09-23T08:53:30.000Z">
+<meta property="og:description" content="使用方法 在didFinishLaunchingWithOptions中调用
+123456- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions&amp;#123;    [self registerForRemoteNotificationC">
+<meta property="og:updated_time" content="2016-09-23T08:55:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 10推送通知工具类">
-<meta name="twitter:description" content="使用方法 在didFinishLaunchingWithOptions中调用123456- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions&amp;#123;    [self registerForRemoteNotificationCon">
+<meta name="twitter:description" content="使用方法 在didFinishLaunchingWithOptions中调用
+123456- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions&amp;#123;    [self registerForRemoteNotificationC">
 
 
 
@@ -237,6 +240,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/杂谈/" itemprop="url" rel="index">
+                    <span itemprop="name">杂谈</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -275,8 +297,10 @@
       
 
       
-        <p>使用方法 在didFinishLaunchingWithOptions中调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</span><br><span class="line">&#123;</span><br><span class="line">    [self registerForRemoteNotificationConfig:launchOptions];</span><br><span class="line"></span><br><span class="line">    return YES;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
+        <ul>
+<li><p>使用方法 在didFinishLaunchingWithOptions中调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</span><br><span class="line">&#123;</span><br><span class="line">    [self registerForRemoteNotificationConfig:launchOptions];</span><br><span class="line"></span><br><span class="line">    return YES;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>PLAppDelegate+RemoteNotification.h</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">//  PLAppDelegate+RemoteNotification.h</span><br><span class="line">//  PL</span><br><span class="line">//</span><br><span class="line">//  Created by AK on 16/6/25.</span><br><span class="line">//  Copyright © 2016年 Catch app. All rights reserved.</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#import &quot;AppDelegate.h&quot;</span><br><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line">#import &lt;UserNotifications/UserNotifications.h&gt;</span><br><span class="line">@interface AppDelegate (RemoteNotification)&lt;UNUserNotificationCenterDelegate&gt;</span><br><span class="line">- (void)registerForRemoteNotificationConfig:(NSDictionary *)launchOptions;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 </li>
@@ -301,6 +325,16 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Xcode8/" rel="tag">#Xcode8</a>
+          
+            <a href="/tags/iOS10/" rel="tag">#iOS10</a>
+          
+            <a href="/tags/Notification-通知/" rel="tag">#Notification(通知)</a>
+          
+        </div>
       
 
       
