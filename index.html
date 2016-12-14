@@ -221,6 +221,128 @@
             
               
                 
+                <a class="post-title-link" href="/2016/12/15/NXFramework-使用说明/" itemprop="url">
+                  NXFramework 使用说明
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-15T00:16:35+08:00" content="2016-12-15">
+              2016-12-15
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/15/NXFramework-使用说明/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/15/NXFramework-使用说明/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/12/15/NXFramework-使用说明/" class="leancloud_visitors" data-flag-title="NXFramework 使用说明">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="简介-目地"><a href="#简介-目地" class="headerlink" title="简介(目地)"></a>简介(目地)</h4><p>NXFramework 是一款iOS开发框架,快速搭建App解决方案.</p>
+<h4 id="快速集成"><a href="#快速集成" class="headerlink" title="快速集成"></a>快速集成</h4><ul>
+<li>1,编辑环境说明</li>
+<li>2,源代码copy 到工程</li>
+<li>3,pod</li>
+</ul>
+<h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4><p>//每一个类都要有说明,要定期更新<br>├── NXAdapted<br>│   ├── NXAdaptedDevice<br>│   │   ├── NXAdaptedDevice.h<br>│   │   └── NXAdaptedDevice.m<br>│   └── NXAdaptedSystem<br>│       ├── NXAdaptedSystem.h<br>│       └── NXAdaptedSystem.m<br>├── NXCategory<br>│   ├── NS<br>│   │   ├── NSArray+NXCategory.h<br>│   │   ├── NSArray+NXCategory.m<br>│   │   ├── NSData+NXCategory.h<br>│   │   ├── NSData+NXCategory.m<br>│   │   ├── NSDate+NXCategory.h<br>│   │   ├── NSDate+NXCategory.m<br>│   │   ├── NSDictionary+NXCategory.h<br>│   │   ├── NSDictionary+NXCategory.m<br>│   │   ├── NSFileWrapper+NXCategory.h<br>│   │   ├── NSFileWrapper+NXCategory.m<br>│   │   ├── NSMutableArray+NXCategory.h<br>│   │   ├── NSMutableArray+NXCategory.m<br>│   │   ├── NSObject+NXAddition.h<br>│   │   ├── NSObject+NXAddition.m<br>│   │   ├── NSObject+NXCategory.h<br>│   │   ├── NSObject+NXCategory.m<br>│   │   ├── NSString+NXCategory.h<br>│   │   ├── NSString+NXCategory.m<br>│   │   ├── NSTimer+NXAddition.h<br>│   │   ├── NSTimer+NXAddition.m<br>│   │   ├── NSURL+NXCategory.h<br>│   │   ├── NSURL+NXCategory.m<br>│   │   ├── NSUserDefaults+NXCategory.h<br>│   │   └── NSUserDefaults+NXCategory.m<br>│   ├── UI<br>│   │   ├── NXUIDevice-Hardware.h<br>│   │   ├── NXUIDevice-Hardware.m<br>│   │   ├── UIAlertView+NXAddition.h<br>│   │   ├── UIAlertView+NXAddition.m<br>│   │   ├── UIBarButtonItem+NXAddition.h<br>│   │   ├── UIBarButtonItem+NXAddition.m<br>│   │   ├── UIColor+NXAddition.h<br>│   │   ├── UIColor+NXAddition.m<br>│   │   ├── UIControl+NXCategory.h<br>│   │   ├── UIControl+NXCategory.m<br>│   │   ├── UIFont+NXCustomLoader.h<br>│   │   ├── UIFont+NXCustomLoader.m<br>│   │   ├── UIImage+NXCategory.h<br>│   │   ├── UIImage+NXCategory.m<br>│   │   ├── UISlider+UISliderBackImage.h<br>│   │   ├── UISlider+UISliderBackImage.m<br>│   │   ├── UIView+NXCategory.h<br>│   │   ├── UIView+NXCategory.m<br>│   │   ├── UIViewController+swizzling.h<br>│   │   └── UIViewController+swizzling.m<br>│   └── VC<br>│       ├── UIViewController+NXAddiction.h<br>│       └── UIViewController+NXAddiction.m<br>├── NXConstant<br>├── NXCustomViews<br>│   ├── NXActionSheet<br>│   │   ├── NXActionSheet.h<br>│   │   └── NXActionSheet.m<br>│   ├── NXAlertView<br>│   │   ├── NXAlertView.h<br>│   │   └── NXAlertView.m<br>│   ├── NXBaseVIew.h<br>│   ├── NXBaseVIew.m<br>│   ├── NXButton<br>│   │   ├── NXButton.h<br>│   │   └── NXButton.m<br>│   ├── NXCreateUITool.h<br>│   ├── NXCreateUITool.m<br>│   ├── NXDatePicker<br>│   │   ├── NXDatePicker.h<br>│   │   └── NXDatePicker.m<br>│   ├── NXLabel<br>│   │   ├── NXLabel.h<br>│   │   ├── NXLabel.m<br>│   │   ├── NXLineLabel.h<br>│   │   ├── NXLineLabel.m<br>│   │   ├── NXMultLabel.h<br>│   │   └── NXMultLabel.m<br>│   ├── NXPageControl<br>│   │   ├── NXPageControl.h<br>│   │   └── NXPageControl.m<br>│   ├── NXPickerView<br>│   │   ├── NXPickerView.h<br>│   │   └── NXPickerView.m<br>│   ├── NXScrollView<br>│   │   ├── NXBrowseView.h<br>│   │   ├── NXBrowseView.m<br>│   │   ├── NXBrowseViewPage.h<br>│   │   ├── NXBrowseViewPage.m<br>│   │   ├── NXScrollView.h<br>│   │   └── NXScrollView.m<br>│   ├── NXSegmentedControl<br>│   │   ├── NXSegmentView.h<br>│   │   └── NXSegmentView.m<br>│   ├── NXTableView<br>│   │   ├── NXCircleView.h<br>│   │   ├── NXCircleView.m<br>│   │   ├── NXExpandTableView.h<br>│   │   ├── NXExpandTableView.m<br>│   │   ├── NXPullLoadView.h<br>│   │   ├── NXPullLoadView.m<br>│   │   ├── NXPullRefreshView.h<br>│   │   ├── NXPullRefreshView.m<br>│   │   ├── NXTableView.h<br>│   │   └── NXTableView.m<br>│   ├── NXTableViewCell<br>│   │   ├── NXExpandTableViewCell.h<br>│   │   ├── NXExpandTableViewCell.m<br>│   │   ├── NXTableViewCell.h<br>│   │   └── NXTableViewCell.m<br>│   ├── NXTextField<br>│   │   ├── NXTextField.h<br>│   │   └── NXTextField.m<br>│   ├── NXTextView<br>│   │   ├── NXTextView.h<br>│   │   └── NXTextView.m<br>│   ├── NXToolbar<br>│   │   ├── NXToolbar.h<br>│   │   └── NXToolbar.m<br>│   └── NXView<br>│       ├── NXActionView.h<br>│       ├── NXActionView.m<br>│       ├── NXView.h<br>│       └── NXView.m<br>├── NXDBManager<br>│   ├── NXDBHelper.h<br>│   ├── NXDBHelper.m<br>│   ├── NXDataSore.h<br>│   └── NXDataSore.m<br>├── NXDebug<br>│   ├── NXDebugWindow.h<br>│   ├── NXDebugWindow.m<br>│   ├── NXLog.h<br>│   ├── NXLog.m<br>│   ├── UIColor+NXDebug.h<br>│   └── UIColor+NXDebug.m<br>├── NXExternals<br>│   ├── AFNetworking<br>│   │   ├── AFNetworkActivityLogger<br>│   │   ├── AFNetworking<br>│   │   └── UIKit+AFNetworking<br>│   ├── Aspects<br>│   │   ├── Aspects.h<br>│   │   └── Aspects.m<br>│   ├── FMDB<br>│   │   ├── FMDB.h<br>│   │   ├── FMDatabase.h<br>│   │   ├── FMDatabase.m<br>│   │   ├── FMDatabaseAdditions.h<br>│   │   ├── FMDatabaseAdditions.m<br>│   │   ├── FMDatabasePool.h<br>│   │   ├── FMDatabasePool.m<br>│   │   ├── FMDatabaseQueue.h<br>│   │   ├── FMDatabaseQueue.m<br>│   │   ├── FMResultSet.h<br>│   │   └── FMResultSet.m<br>│   ├── MJRefresh<br>│   │   ├── Base<br>│   │   │   ├── MJRefreshAutoFooter.h<br>│   │   │   ├── MJRefreshAutoFooter.m<br>│   │   │   ├── MJRefreshBackFooter.h<br>│   │   │   ├── MJRefreshBackFooter.m<br>│   │   │   ├── MJRefreshComponent.h<br>│   │   │   ├── MJRefreshComponent.m<br>│   │   │   ├── MJRefreshFooter.h<br>│   │   │   ├── MJRefreshFooter.m<br>│   │   │   ├── MJRefreshHeader.h<br>│   │   │   └── MJRefreshHeader.m<br>│   │   ├── Custom<br>│   │   │   ├── Footer<br>│   │   │   │   ├── Auto<br>│   │   │   │   │   ├── MJRefreshAutoGifFooter.h<br>│   │   │   │   │   ├── MJRefreshAutoGifFooter.m<br>│   │   │   │   │   ├── MJRefreshAutoNormalFooter.h<br>│   │   │   │   │   ├── MJRefreshAutoNormalFooter.m<br>│   │   │   │   │   ├── MJRefreshAutoStateFooter.h<br>│   │   │   │   │   └── MJRefreshAutoStateFooter.m<br>│   │   │   │   └── Back<br>│   │   │   │       ├── MJRefreshBackGifFooter.h<br>│   │   │   │       ├── MJRefreshBackGifFooter.m<br>│   │   │   │       ├── MJRefreshBackNormalFooter.h<br>│   │   │   │       ├── MJRefreshBackNormalFooter.m<br>│   │   │   │       ├── MJRefreshBackStateFooter.h<br>│   │   │   │       └── MJRefreshBackStateFooter.m<br>│   │   │   └── Header<br>│   │   │       ├── MJRefreshGifHeader.h<br>│   │   │       ├── MJRefreshGifHeader.m<br>│   │   │       ├── MJRefreshNormalHeader.h<br>│   │   │       ├── MJRefreshNormalHeader.m<br>│   │   │       ├── MJRefreshStateHeader.h<br>│   │   │       └── MJRefreshStateHeader.m<br>│   │   ├── MJRefresh.bundle<br>│   │   │   └── arrow@2x.png<br>│   │   ├── MJRefresh.h<br>│   │   ├── MJRefreshConst.h<br>│   │   ├── MJRefreshConst.m<br>│   │   ├── UIScrollView+MJExtension.h<br>│   │   ├── UIScrollView+MJExtension.m<br>│   │   ├── UIScrollView+MJRefresh.h<br>│   │   ├── UIScrollView+MJRefresh.m<br>│   │   ├── UIView+MJExtension.h<br>│   │   └── UIView+MJExtension.m<br>│   ├── MLeaksFinder<br>│   ├── MZTimerLabel<br>│   │   ├── MZTimerLabel.h<br>│   │   └── MZTimerLabel.m<br>│   ├── QiniuTokenTool<br>│   │   ├── GTMBase64.h<br>│   │   ├── GTMBase64.m<br>│   │   ├── GTMDefines.h<br>│   │   ├── QiniuToken.h<br>│   │   └── QiniuToken.m<br>│   ├── SDAutoLayout<br>│   │   ├── UITableView+SDAutoTableViewCellHeight.h<br>│   │   ├── UITableView+SDAutoTableViewCellHeight.m<br>│   │   ├── UIView+SDAutoLayout.h<br>│   │   └── UIView+SDAutoLayout.m<br>│   ├── SDWebImage<br>│   └── SVProgressHUD<br>├── NXFoundation<br>│   ├── NXJSONSerializing.h<br>│   ├── NXModel.h<br>│   ├── NXModel.m<br>│   ├── NXNSJSONSerialization.h<br>│   └── NXNSJSONSerialization.m<br>├── NXFramework.h<br>├── NXMacro<br>│   ├── NXConfig.h<br>│   └── NXPXISARC.h<br>├── NXNetworkManager<br>├── NXObject.h<br>├── NXObject.m<br>├── NXUtility<br>│   ├── Math<br>│   │   ├── NXMath.h<br>│   │   └── NXMath.m<br>│   ├── NXAVAssetExportSession.h<br>│   ├── NXAVAssetExportSession.m<br>│   ├── NXAppReview.h<br>│   ├── NXAppReview.m<br>│   ├── NXAppUpdate.h<br>│   ├── NXAppUpdate.m<br>│   ├── NXArchivedManager.h<br>│   ├── NXArchivedManager.m<br>│   ├── NXAudioQueuePlayAudio.h<br>│   ├── NXAudioQueuePlayAudio.m<br>│   ├── NXBaiDuTranslate.h<br>│   ├── NXBaiDuTranslate.m<br>│   ├── NXChannelInfo.h<br>│   ├── NXCoreBluetoothTool.h<br>│   ├── NXCoreBluetoothTool.m<br>│   ├── NXDateManager.h<br>│   ├── NXDateManager.m<br>│   ├── NXDevicePermission.h<br>│   ├── NXDevicePermission.m<br>│   ├── NXFileHash.h<br>│   ├── NXFileHash.m<br>│   ├── NXFileManager.h<br>│   ├── NXFileManager.m<br>│   ├── NXKeychainTools.h<br>│   ├── NXKeychainTools.m<br>│   ├── NXLocationManager.h<br>│   ├── NXLocationManager.m<br>│   ├── NXLogManager.h<br>│   ├── NXLogManager.m<br>│   ├── NXMuteSwitch.h<br>│   ├── NXMuteSwitch.m<br>│   ├── NXPhotoOrCamera.h<br>│   ├── NXPhotoOrCamera.m<br>│   ├── NXPlayer.h<br>│   ├── NXPlayer.m<br>│   ├── NXReachability.h<br>│   ├── NXReachability.m<br>│   ├── NXSendMail.h<br>│   ├── NXSendMail.m<br>│   ├── NXSpotlight.h<br>│   ├── NXSpotlight.m<br>│   ├── NXSwizzleManager.h<br>│   ├── NXSwizzleManager.m<br>│   ├── NXSystemInfo.h<br>│   ├── NXSystemInfo.m<br>│   ├── NXUMTruck.h<br>│   ├── NXUMTruck.m<br>│   ├── NXVolumeObserver.h<br>│   ├── NXVolumeObserver.m<br>│   ├── NXWIFISystemInfo.h<br>│   ├── NXWIFISystemInfo.m<br>│   └── README.md<br>├── NXlib.bundle<br>│   ├── en.lproj<br>│   │   └── NSDateTimeAgo.strings<br>│   ├── mute.caf<br>│   └── zh-Hans.lproj<br>│       └── NSDateTimeAgo.strings<br>└── README.md</p>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ul>
+<li>所有类名包括category都要加NX前缀.</li>
+<li>第三方库的处理,POD 方案.</li>
+<li>做基本的检查和测试,不应该有编译器警告存在.</li>
+<li>文档(注释)应完整并且正确.</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/23/快速下载-maxOS-Sierra的方法/" itemprop="url">
                   快速下载 maxOS Sierra的方法
                 </a>
@@ -874,153 +996,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/30/MAC-硬盘清理重点/" itemprop="url">
-                  MAC 硬盘清理重点
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-30T20:31:15+08:00" content="2016-04-30">
-              2016-04-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/杂谈/" itemprop="url" rel="index">
-                    <span itemprop="name">杂谈</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/30/MAC-硬盘清理重点/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/30/MAC-硬盘清理重点/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/04/30/MAC-硬盘清理重点/" class="leancloud_visitors" data-flag-title="MAC 硬盘清理重点">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>「其他」部分占用磁盘空间往往不小，那么到底那些文件组成了「其他」部分呢？<br>OS X 可以识别应用程序、备份、音频、电影、备份、和照片等集中文件类型，而「其他」部分则含括了除上述提到的文件类型的其他文件类型。这意味着，「其他」部分包含了相当多的文件类型。常见的如下列表：</p>
-<ul>
-<li>文件和文件类型，包括.pdf、.doc、.psd 等文件类型</li>
-<li>存档文件和磁盘映像，包括 .zip、.dmg、.iso 等文件类型</li>
-<li>个人文件和用户数据（user data）</li>
-<li>OS X 系统文件夹内的文件，如系统的临时文件等</li>
-<li>用户库文件，如应用程序支持文档、iCloud 文档、屏保程序等</li>
-<li>用户缓存和系统缓存，比如浏览器缓存和存储在本地的对话信息</li>
-<li>字体文件、应用程序插件、应用程序扩展等</li>
-<li>Spotlight 无法识别的文件类型，如虚拟机的磁盘驱动器，Windows Boot Camp 启动分区等</li>
-</ul>
-<p><img src="/images/macclear.jpeg" alt=""><br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/30/MAC-硬盘清理重点/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1061,7 +1041,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
