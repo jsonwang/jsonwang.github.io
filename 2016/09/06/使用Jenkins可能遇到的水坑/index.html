@@ -88,7 +88,7 @@
 <meta property="og:url" content="http://jsonwang.github.io/2016/09/06/使用Jenkins可能遇到的水坑/index.html">
 <meta property="og:site_name" content="AK的园子">
 <meta property="og:description" content="1,iOS编译签名文件找不到Check dependencies Code Sign error: No matching provisioning profile found: Your build settings specify a provisioning profile with the UUID 75025357-245d-448b-9343-96148a0xxxxx, however">
-<meta property="og:updated_time" content="2016-09-08T01:26:47.000Z">
+<meta property="og:updated_time" content="2017-02-08T04:34:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Jenkins可能遇到的水坑">
 <meta name="twitter:description" content="1,iOS编译签名文件找不到Check dependencies Code Sign error: No matching provisioning profile found: Your build settings specify a provisioning profile with the UUID 75025357-245d-448b-9343-96148a0xxxxx, however">
@@ -296,9 +296,9 @@
       
         <h4 id="1-iOS编译签名文件找不到"><a href="#1-iOS编译签名文件找不到" class="headerlink" title="1,iOS编译签名文件找不到"></a>1,iOS编译签名文件找不到</h4><p>Check dependencies Code Sign error: No matching provisioning profile found: Your build settings specify a provisioning profile with the UUID 75025357-245d-448b-9343-96148a0xxxxx, however, no such provisioning profile was found.</p>
 <p>原因是jenkins以jenkins用户身份运行，iOS项目编译用的签名文件要从安装证书时的用户目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/用户名/Library/MobileDevice/Provisioning Profiles</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/用户名/Library/MobileDevice/Provisioning\ Profiles</span><br></pre></td></tr></table></figure>
 <p>拷贝到</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/Shared/Jenkins/Library/MobileDevice/Provisioning Profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/Shared/Jenkins/Library/MobileDevice/Provisioning\ Profile</span><br></pre></td></tr></table></figure>
 <p>没有对应目录时手动创建.</p>
 <h4 id="2-iOS编译证书找不到"><a href="#2-iOS编译证书找不到" class="headerlink" title="2,iOS编译证书找不到"></a>2,iOS编译证书找不到</h4><p>Check dependencies Code Sign error: No codesigning identities found: No codesigning identities (i.e. certificate and private key pairs) that match the provisioning profile specified in your build settings<br>(“xxxxx”) were found.</p>
 <p>解决办法<br>打开“钥匙串访问”，从“登录”拷贝安装的证书到“系统”下</p>
