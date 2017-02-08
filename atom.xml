@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jsonwang.github.io/"/>
-  <updated>2017-02-08T05:20:57.000Z</updated>
+  <updated>2017-02-08T06:06:05.000Z</updated>
   <id>http://jsonwang.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://jsonwang.github.io/2017/02/08/Xcode8-2-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF/"/>
     <id>http://jsonwang.github.io/2017/02/08/Xcode8-2-自定义模板/</id>
     <published>2017-02-08T04:05:59.000Z</published>
-    <updated>2017-02-08T05:20:57.000Z</updated>
+    <updated>2017-02-08T06:06:05.000Z</updated>
     
     <content type="html">&lt;h4 id=&quot;一-如何使用&quot;&gt;&lt;a href=&quot;#一-如何使用&quot; class=&quot;headerlink&quot; title=&quot;一,如何使用&quot;&gt;&lt;/a&gt;一,如何使用&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;1,下载工程模版文件 &lt;a href=&quot;https://github.com/jsonwang/NX-Xcode-Template&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/jsonwang/NX-Xcode-Template&lt;/a&gt;&lt;/li&gt;
@@ -42,6 +42,13 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;用户自定义模板位置,我们自定义的都要放在这个目录下才可以生效&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;~/Library/Developer/Xcode/Templates&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;四-NXFramework-XcodeTemplates-说明&quot;&gt;&lt;a href=&quot;#四-NXFramework-XcodeTemplates-说明&quot; class=&quot;headerlink&quot; title=&quot;四,NXFramework XcodeTemplates 说明&quot;&gt;&lt;/a&gt;四,NXFramework XcodeTemplates 说明&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;1,模版目录结构&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;├── Classes - 自定义类目录结构&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;│   ├── PGeneral - P:project 工程项目级别,整个工程跨功能模块的代码&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;│   │   ├── PCategory  - project level category&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;│   │   ├── PConstant  - project level 定义&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;│   │   ├── PControllers - project level controller&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;│   │   ├── PUIkit -  project level UI组件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;│   │   └── PUtility - project level 工具类&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;│   └── PVendors&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;├── Res - 图片资源目录&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;├── Supporting\ Files&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;│   └── ___PROJECTNAME___-prefix.pch - PCH 文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;├── TemplateIcon.png  - 选择界面中的图标文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;├── TemplateIcon@2x.png - 选择界面中的图标文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;└── TemplateInfo.plist - 模版配置文件(重要下面会详细说明)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;2,TemplateInfo.plist 主要内容说明如图&lt;br&gt;&lt;img src=&quot;/images/XcodeTemplates/do3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 </content>
