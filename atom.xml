@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jsonwang.github.io/"/>
-  <updated>2016-12-18T02:20:27.000Z</updated>
+  <updated>2017-02-08T04:32:20.000Z</updated>
   <id>http://jsonwang.github.io/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Xcode8.2 自定义模板</title>
+    <link href="http://jsonwang.github.io/2017/02/08/Xcode8-2-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF/"/>
+    <id>http://jsonwang.github.io/2017/02/08/Xcode8-2-自定义模板/</id>
+    <published>2017-02-08T04:05:59.000Z</published>
+    <updated>2017-02-08T04:32:20.000Z</updated>
+    
+    <content type="html">&lt;h4 id=&quot;一-自定义模板好处&quot;&gt;&lt;a href=&quot;#一-自定义模板好处&quot; class=&quot;headerlink&quot; title=&quot;一,自定义模板好处&quot;&gt;&lt;/a&gt;一,自定义模板好处&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;快速创建工程目录结构&lt;/li&gt;
+&lt;li&gt;节省重复代码手写时间&lt;/li&gt;
+&lt;li&gt;统一规范代码，提高代码可读性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;二-工程模板位置&quot;&gt;&lt;a href=&quot;#二-工程模板位置&quot; class=&quot;headerlink&quot; title=&quot;二,工程模板位置&quot;&gt;&lt;/a&gt;二,工程模板位置&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;里面包含文件模板（File Templates）和工程模板（Project Templates）&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MacOSX的系统文件模板位置&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用户自定义模板位置,我们自定义的都要放在这个目录下才可以生效&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;~/Library/Developer/Xcode/Templates&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;三-如何使用&quot;&gt;&lt;a href=&quot;#三-如何使用&quot; class=&quot;headerlink&quot; title=&quot;三,如何使用&quot;&gt;&lt;/a&gt;三,如何使用&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;1,下载工程模版文件 &lt;a href=&quot;https://github.com/jsonwang/NX-Xcode-Template&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/jsonwang/NX-Xcode-Template&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2,复制文件到 ~/Library/Developer/Xcode/Templates&lt;/li&gt;
+&lt;li&gt;3,正常创建工程如下图&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;一-自定义模板好处&quot;&gt;&lt;a href=&quot;#一-自定义模板好处&quot; class=&quot;headerlink&quot; title=&quot;一,自定义模板好处&quot;&gt;&lt;/a&gt;一,自定义模板好处&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;快速创建工程目录结构&lt;/li&gt;
+&lt;li&gt;节省重复代码手写时间&lt;/li&gt;
+
+    
+    </summary>
+    
+      <category term="杂谈" scheme="http://jsonwang.github.io/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="Xcode8.2" scheme="http://jsonwang.github.io/tags/Xcode8-2/"/>
+    
+      <category term="自定义模板" scheme="http://jsonwang.github.io/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E6%9D%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>NXFramework 使用说明</title>
