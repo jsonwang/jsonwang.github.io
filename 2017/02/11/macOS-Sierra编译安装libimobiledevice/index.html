@@ -100,7 +100,7 @@
 
 二,编译安装1,安装libimobiledevice 确认下载依赖库openssl、 libplist 、libusb、libusbmuxd –&amp;gt;
 123456$ git clone h">
-<meta property="og:updated_time" content="2017-02-11T18:19:25.000Z">
+<meta property="og:updated_time" content="2017-02-11T18:24:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="macOS-Sierra编译安装libimobiledevice">
 <meta name="twitter:description" content="一,libimobiledevice 能做什么
@@ -313,7 +313,7 @@
 <p>报错4<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Undefined symbols for architecture x86_64:</span><br><span class="line">  &quot;_ERR_remove_thread_state&quot;, referenced from:</span><br><span class="line">      _internal_idevice_deinit in idevice.o</span><br><span class="line">      _idevice_connection_enable_ssl in idevice.o</span><br><span class="line">ld: symbol(s) not found for architecture x86_64</span><br><span class="line">clang: error: linker command failed with exit code 1 (use -v to see invocation)</span><br><span class="line">make[2]: *** [libimobiledevice.la] Error 1</span><br><span class="line">make[1]: *** [all-recursive] Error 1</span><br><span class="line">make: *** [all] Error 2</span><br></pre></td></tr></table></figure></p>
 <p>解决方案:执行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CFLAGS=-I/usr/local/opt/openssl/include LDFLAGS=-L/usr/local/opt/openssl/lib ./autogen.sh [--enable-static 静态编译]</span><br></pre></td></tr></table></figure>
-<p>参考<br><a href="http://www.cnblogs.com/ydhliphonedev/p/3376043.html" target="_blank" rel="external">http://www.cnblogs.com/ydhliphonedev/p/3376043.html</a><br><a href="https://github.com/jsonwang/ideviceinstaller" target="_blank" rel="external">https://github.com/jsonwang/ideviceinstaller</a><br><a href="http://www.aichengxu.com/diannao/51513.htm" target="_blank" rel="external">http://www.aichengxu.com/diannao/51513.htm</a> 用到CI自动安装APP<br><a href="http://blog.okeyang.com/blog/2013/09/16/iproxy-tong-guo-usbshi-yong-sshlian-jie-iosshe-bei/" target="_blank" rel="external">http://blog.okeyang.com/blog/2013/09/16/iproxy-tong-guo-usbshi-yong-sshlian-jie-iosshe-bei/</a><br><a href="https://testerhome.com/topics/555" target="_blank" rel="external">https://testerhome.com/topics/555</a><br><a href="http://www.dllhook.com/post/169.html" target="_blank" rel="external">http://www.dllhook.com/post/169.html</a><br><a href="http://www.libimobiledevice.org/" target="_blank" rel="external">http://www.libimobiledevice.org/</a><br><a href="https://github.com/libimobiledevice/libimobiledevice" target="_blank" rel="external">https://github.com/libimobiledevice/libimobiledevice</a></p>
+<p>参考<br><a href="https://github.com/jsonwang/ideviceinstaller" target="_blank" rel="external">https://github.com/jsonwang/ideviceinstaller</a><br><a href="http://www.dllhook.com/post/169.html" target="_blank" rel="external">http://www.dllhook.com/post/169.html</a><br><a href="https://github.com/libimobiledevice/libimobiledevice" target="_blank" rel="external">https://github.com/libimobiledevice/libimobiledevice</a></p>
 
       
     </div>
