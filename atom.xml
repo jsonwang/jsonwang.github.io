@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jsonwang.github.io/"/>
-  <updated>2017-02-12T19:41:20.000Z</updated>
+  <updated>2017-02-17T05:09:29.000Z</updated>
   <id>http://jsonwang.github.io/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://jsonwang.github.io/2017/02/11/macOS-Sierra%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85libimobiledevice/"/>
     <id>http://jsonwang.github.io/2017/02/11/macOS-Sierra编译安装libimobiledevice/</id>
     <published>2017-02-10T17:23:54.000Z</published>
-    <updated>2017-02-12T19:41:20.000Z</updated>
+    <updated>2017-02-17T05:09:29.000Z</updated>
     
     <content type="html">&lt;h4 id=&quot;一-libimobiledevice-能做什么&quot;&gt;&lt;a href=&quot;#一-libimobiledevice-能做什么&quot; class=&quot;headerlink&quot; title=&quot;一,libimobiledevice 能做什么&quot;&gt;&lt;/a&gt;一,libimobiledevice 能做什么&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;打包生成好的测试ipa 直接安装集成到设备.&lt;/li&gt;
 &lt;li&gt;无线查看iOS 设备 安装的APP,LOG,crash信息,共享目录等.&lt;/li&gt;
 &lt;li&gt;可让iPhone进行重启,关机,睡眠等.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&quot;二-编译安装&quot;&gt;&lt;a href=&quot;#二-编译安装&quot; class=&quot;headerlink&quot; title=&quot;二,编译安装&quot;&gt;&lt;/a&gt;二,编译安装&lt;/h4&gt;&lt;h5 id=&quot;1-安装libimobiledevice-确认下载依赖库openssl、-libplist-、libusb、libusbmuxd&quot;&gt;&lt;a href=&quot;#1-安装libimobiledevice-确认下载依赖库openssl、-libplist-、libusb、libusbmuxd&quot; class=&quot;headerlink&quot; title=&quot;1,安装libimobiledevice 确认下载依赖库openssl、 libplist 、libusb、libusbmuxd&quot;&gt;&lt;/a&gt;1,安装libimobiledevice 确认下载依赖库openssl、 libplist 、libusb、libusbmuxd&lt;/h5&gt;&lt;!-- &lt;-- more --&gt; –&amp;gt;
+&lt;h4 id=&quot;二-编译安装&quot;&gt;&lt;a href=&quot;#二-编译安装&quot; class=&quot;headerlink&quot; title=&quot;二,编译安装&quot;&gt;&lt;/a&gt;二,编译安装&lt;/h4&gt;&lt;h5 id=&quot;1-安装libimobiledevice-确认下载依赖库openssl、-libplist-、libusb、libusbmuxd&quot;&gt;&lt;a href=&quot;#1-安装libimobiledevice-确认下载依赖库openssl、-libplist-、libusb、libusbmuxd&quot; class=&quot;headerlink&quot; title=&quot;1,安装libimobiledevice 确认下载依赖库openssl、 libplist 、libusb、libusbmuxd&quot;&gt;&lt;/a&gt;1,安装libimobiledevice 确认下载依赖库openssl、 libplist 、libusb、libusbmuxd&lt;/h5&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git clone https://github.com/libimobiledevice/libimobiledevice.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ cd libimobiledevice&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ ./autogen.sh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ sudo make install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h5 id=&quot;2-安装ideviceinstaller&quot;&gt;&lt;a href=&quot;#2-安装ideviceinstaller&quot; class=&quot;headerlink&quot; title=&quot;2,安装ideviceinstaller&quot;&gt;&lt;/a&gt;2,安装ideviceinstaller&lt;/h5&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git clone https://github.com/libimobiledevice/ideviceinstaller.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ cd ideviceinstaller&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ ./autogen.sh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ sudo make install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h4 id=&quot;三-安装ifuse&quot;&gt;&lt;a href=&quot;#三-安装ifuse&quot; class=&quot;headerlink&quot; title=&quot;三,安装ifuse&quot;&gt;&lt;/a&gt;三,安装ifuse&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git clone https://github.com/libimobiledevice/ifuse.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ cd ifuse&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ ./autogen.sh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ sudo make install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -66,7 +66,12 @@
     
     <summary type="html">
     
-      &lt;h4 id=&quot;一-libimobiledevice-能做什么&quot;&gt;&lt;a href=&quot;#一-libimobiledevice-能做什么&quot; class=&quot;headerlink&quot; title=&quot;一,libimobiledevice 能做什么&quot;&gt;&lt;/a&gt;一,libimobiledevic
+      &lt;h4 id=&quot;一-libimobiledevice-能做什么&quot;&gt;&lt;a href=&quot;#一-libimobiledevice-能做什么&quot; class=&quot;headerlink&quot; title=&quot;一,libimobiledevice 能做什么&quot;&gt;&lt;/a&gt;一,libimobiledevice 能做什么&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;打包生成好的测试ipa 直接安装集成到设备.&lt;/li&gt;
+&lt;li&gt;无线查看iOS 设备 安装的APP,LOG,crash信息,共享目录等.&lt;/li&gt;
+&lt;li&gt;可让iPhone进行重启,关机,睡眠等.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;二-编译安装&quot;&gt;&lt;a href=&quot;#二-编译安装&quot; class=&quot;headerlink&quot; title=&quot;二,编译安装&quot;&gt;&lt;/a&gt;二,编译安装&lt;/h4&gt;&lt;h5 id=&quot;1-安装libimobiledevice-确认下载依赖库openssl、-libplist-、libusb、libusbmuxd&quot;&gt;&lt;a href=&quot;#1-安装libimobiledevice-确认下载依赖库openssl、-libplist-、libusb、libusbmuxd&quot; class=&quot;headerlink&quot; title=&quot;1,安装libimobiledevice 确认下载依赖库openssl、 libplist 、libusb、libusbmuxd&quot;&gt;&lt;/a&gt;1,安装libimobiledevice 确认下载依赖库openssl、 libplist 、libusb、libusbmuxd&lt;/h5&gt;
     
     </summary>
     
