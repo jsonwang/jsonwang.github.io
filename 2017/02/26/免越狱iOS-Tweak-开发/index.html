@@ -83,24 +83,27 @@
 
 
 <meta name="description" content="脱壳
+
 使用dumpdecrypted工具 砸壳,也可以使用clutch
 注意要砸壳的iOS系统版本,即iOS版本需要与SDK版本相同。注意，5.1版SDK编译出的dylib是向下兼容的，可以用于iOS5.0
-修改MakeFile和修改源码 ,make文件中SDK=xcrun --sdk iphoneos --show-sdk-path 改成SDK=指定SDK文件目录~/SDKs/iPhoneOS8">
+修改MakeFile和修改源码 ,make文件中SDK=xcrun --sdk iphoneos --show-sdk-path 改成SDK=指定SDK文件目录~/SDKs/iPhoneOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="免越狱iOS Tweak 开发">
 <meta property="og:url" content="http://jsonwang.github.io/2017/02/26/免越狱iOS-Tweak-开发/index.html">
 <meta property="og:site_name" content="AK的园子">
 <meta property="og:description" content="脱壳
+
 使用dumpdecrypted工具 砸壳,也可以使用clutch
 注意要砸壳的iOS系统版本,即iOS版本需要与SDK版本相同。注意，5.1版SDK编译出的dylib是向下兼容的，可以用于iOS5.0
-修改MakeFile和修改源码 ,make文件中SDK=xcrun --sdk iphoneos --show-sdk-path 改成SDK=指定SDK文件目录~/SDKs/iPhoneOS8">
-<meta property="og:updated_time" content="2017-02-25T16:08:00.000Z">
+修改MakeFile和修改源码 ,make文件中SDK=xcrun --sdk iphoneos --show-sdk-path 改成SDK=指定SDK文件目录~/SDKs/iPhoneOS">
+<meta property="og:updated_time" content="2017-02-25T16:15:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="免越狱iOS Tweak 开发">
 <meta name="twitter:description" content="脱壳
+
 使用dumpdecrypted工具 砸壳,也可以使用clutch
 注意要砸壳的iOS系统版本,即iOS版本需要与SDK版本相同。注意，5.1版SDK编译出的dylib是向下兼容的，可以用于iOS5.0
-修改MakeFile和修改源码 ,make文件中SDK=xcrun --sdk iphoneos --show-sdk-path 改成SDK=指定SDK文件目录~/SDKs/iPhoneOS8">
+修改MakeFile和修改源码 ,make文件中SDK=xcrun --sdk iphoneos --show-sdk-path 改成SDK=指定SDK文件目录~/SDKs/iPhoneOS">
 
 
 
@@ -303,7 +306,8 @@
       
 
       
-        <h4 id="脱壳"><a href="#脱壳" class="headerlink" title="脱壳"></a>脱壳</h4><ul>
+        <h4 id="脱壳"><a href="#脱壳" class="headerlink" title="脱壳"></a>脱壳</h4><hr>
+<ul>
 <li>使用<a href="https://github.com/ianisme/IANDecryptiOSApp/tree/master/dumpdecrypted" target="_blank" rel="external">dumpdecrypted工具</a> 砸壳,也可以使用<a href="https://github.com/KJCracks/Clutch" target="_blank" rel="external">clutch</a></li>
 <li>注意要砸壳的iOS系统版本,即iOS版本需要与SDK版本相同。注意，5.1版SDK编译出的dylib是向下兼容的，可以用于iOS5.0</li>
 <li><p>修改MakeFile和修改源码 ,make文件中SDK=<code>xcrun --sdk iphoneos --show-sdk-path</code> 改成SDK=指定SDK文件目录~/SDKs/iPhoneOS8.X.sdk<br>修改 dumpdecrypted.c第76行的if (lc-&gt;cmd ==LC_ENCRYPTION_INFO || lc-&gt;cmd == LC_ENCRYPTION_INFO_64) 改成 if(lc-&gt;cmd == LC_ENCRYPTION_INFO)</p>
@@ -364,11 +368,14 @@
 <p>创建工程<br>$THEOS/bin/nic.pl</p>
 <p>提示输出如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">NIC 2.0 - New Instance Creator</span><br><span class="line">------------------------------</span><br><span class="line">  [1.] iphone/activator_event</span><br><span class="line">  [2.] iphone/application_modern</span><br><span class="line">  [3.] iphone/cydget</span><br><span class="line">  [4.] iphone/flipswitch_switch</span><br><span class="line">  [5.] iphone/framework</span><br><span class="line">  [6.] iphone/ios7_notification_center_widget</span><br><span class="line">  [7.] iphone/library</span><br><span class="line">  [8.] iphone/notification_center_widget</span><br><span class="line">  [9.] iphone/preference_bundle_modern</span><br><span class="line">  [10.] iphone/tool</span><br><span class="line">  [11.] iphone/tweak</span><br><span class="line">  [12.] iphone/xpc_service</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li>安装打包插件步骤<br>1,cd 工程目录<br>2,make<br>3,make package<br>4,make install</li>
+<li>安装打包插件步骤<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$make</span><br><span class="line">$make package</span><br><span class="line">$make install</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ul>
 <li><a href="http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&amp;mid=2653577384&amp;idx=1&amp;sn=b44a9c9651bf09c5bea7e0337031c53c&amp;scene=0#wechat_redirect" target="_blank" rel="external">移动App入侵与逆向破解技术－iOS篇</a></li>
-<li><a href="https://github.com/yohunl/DingTalkNoJailTweak" target="_blank" rel="external">DingTalkNoJailTweak</a><br><a href="https://github.com/buginux/WeChatRedEnvelop" target="_blank" rel="external">免越狱版 iOS 抢红包插件</a><br><a href="http://www.jianshu.com/p/c9d3b13044d3" target="_blank" rel="external">optool 编译</a></li>
+<li><a href="https://github.com/yohunl/DingTalkNoJailTweak" target="_blank" rel="external">DingTalkNoJailTweak</a></li>
+<li><a href="https://github.com/buginux/WeChatRedEnvelop" target="_blank" rel="external">免越狱版 iOS 抢红包插件</a></li>
+<li><a href="http://www.jianshu.com/p/c9d3b13044d3" target="_blank" rel="external">optool 编译</a></li>
 </ul>
 
       

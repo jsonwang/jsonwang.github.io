@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jsonwang.github.io/"/>
-  <updated>2017-02-25T16:08:00.000Z</updated>
+  <updated>2017-02-25T16:15:42.000Z</updated>
   <id>http://jsonwang.github.io/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://jsonwang.github.io/2017/02/26/%E5%85%8D%E8%B6%8A%E7%8B%B1iOS-Tweak-%E5%BC%80%E5%8F%91/"/>
     <id>http://jsonwang.github.io/2017/02/26/免越狱iOS-Tweak-开发/</id>
     <published>2017-02-25T16:05:44.000Z</published>
-    <updated>2017-02-25T16:08:00.000Z</updated>
+    <updated>2017-02-25T16:15:42.000Z</updated>
     
-    <content type="html">&lt;h4 id=&quot;脱壳&quot;&gt;&lt;a href=&quot;#脱壳&quot; class=&quot;headerlink&quot; title=&quot;脱壳&quot;&gt;&lt;/a&gt;脱壳&lt;/h4&gt;&lt;ul&gt;
+    <content type="html">&lt;h4 id=&quot;脱壳&quot;&gt;&lt;a href=&quot;#脱壳&quot; class=&quot;headerlink&quot; title=&quot;脱壳&quot;&gt;&lt;/a&gt;脱壳&lt;/h4&gt;&lt;hr&gt;
+&lt;ul&gt;
 &lt;li&gt;使用&lt;a href=&quot;https://github.com/ianisme/IANDecryptiOSApp/tree/master/dumpdecrypted&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;dumpdecrypted工具&lt;/a&gt; 砸壳,也可以使用&lt;a href=&quot;https://github.com/KJCracks/Clutch&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;clutch&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;注意要砸壳的iOS系统版本,即iOS版本需要与SDK版本相同。注意，5.1版SDK编译出的dylib是向下兼容的，可以用于iOS5.0&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;修改MakeFile和修改源码 ,make文件中SDK=&lt;code&gt;xcrun --sdk iphoneos --show-sdk-path&lt;/code&gt; 改成SDK=指定SDK文件目录~/SDKs/iPhoneOS8.X.sdk&lt;br&gt;修改 dumpdecrypted.c第76行的if (lc-&amp;gt;cmd ==LC_ENCRYPTION_INFO || lc-&amp;gt;cmd == LC_ENCRYPTION_INFO_64) 改成 if(lc-&amp;gt;cmd == LC_ENCRYPTION_INFO)&lt;/p&gt;
@@ -83,18 +84,22 @@
 &lt;p&gt;创建工程&lt;br&gt;$THEOS/bin/nic.pl&lt;/p&gt;
 &lt;p&gt;提示输出如下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;NIC 2.0 - New Instance Creator&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;------------------------------&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [1.] iphone/activator_event&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [2.] iphone/application_modern&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [3.] iphone/cydget&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [4.] iphone/flipswitch_switch&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [5.] iphone/framework&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [6.] iphone/ios7_notification_center_widget&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [7.] iphone/library&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [8.] iphone/notification_center_widget&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [9.] iphone/preference_bundle_modern&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [10.] iphone/tool&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [11.] iphone/tweak&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [12.] iphone/xpc_service&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;安装打包插件步骤&lt;br&gt;1,cd 工程目录&lt;br&gt;2,make&lt;br&gt;3,make package&lt;br&gt;4,make install&lt;/li&gt;
+&lt;li&gt;安装打包插件步骤&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$make package&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$make install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&amp;amp;mid=2653577384&amp;amp;idx=1&amp;amp;sn=b44a9c9651bf09c5bea7e0337031c53c&amp;amp;scene=0#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;移动App入侵与逆向破解技术－iOS篇&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/yohunl/DingTalkNoJailTweak&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DingTalkNoJailTweak&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/buginux/WeChatRedEnvelop&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;免越狱版 iOS 抢红包插件&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.jianshu.com/p/c9d3b13044d3&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;optool 编译&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/yohunl/DingTalkNoJailTweak&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DingTalkNoJailTweak&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/buginux/WeChatRedEnvelop&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;免越狱版 iOS 抢红包插件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/c9d3b13044d3&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;optool 编译&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     
     <summary type="html">
     
-      &lt;h4 id=&quot;脱壳&quot;&gt;&lt;a href=&quot;#脱壳&quot; class=&quot;headerlink&quot; title=&quot;脱壳&quot;&gt;&lt;/a&gt;脱壳&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;使用&lt;a href=&quot;https://github.com/ianisme/IANDecryptiOSApp/tree/mast
+      &lt;h4 id=&quot;脱壳&quot;&gt;&lt;a href=&quot;#脱壳&quot; class=&quot;headerlink&quot; title=&quot;脱壳&quot;&gt;&lt;/a&gt;脱壳&lt;/h4&gt;&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;使用&lt;a href=&quot;https://github.com/ianisme/IANDecryptiOSApp/tree
     
     </summary>
     
