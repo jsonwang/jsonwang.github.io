@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jsonwang.github.io/"/>
-  <updated>2017-02-17T05:29:09.000Z</updated>
+  <updated>2017-02-25T16:08:00.000Z</updated>
   <id>http://jsonwang.github.io/</id>
   
   <author>
@@ -14,6 +14,102 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>免越狱iOS Tweak 开发</title>
+    <link href="http://jsonwang.github.io/2017/02/26/%E5%85%8D%E8%B6%8A%E7%8B%B1iOS-Tweak-%E5%BC%80%E5%8F%91/"/>
+    <id>http://jsonwang.github.io/2017/02/26/免越狱iOS-Tweak-开发/</id>
+    <published>2017-02-25T16:05:44.000Z</published>
+    <updated>2017-02-25T16:08:00.000Z</updated>
+    
+    <content type="html">&lt;h4 id=&quot;脱壳&quot;&gt;&lt;a href=&quot;#脱壳&quot; class=&quot;headerlink&quot; title=&quot;脱壳&quot;&gt;&lt;/a&gt;脱壳&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;使用&lt;a href=&quot;https://github.com/ianisme/IANDecryptiOSApp/tree/master/dumpdecrypted&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;dumpdecrypted工具&lt;/a&gt; 砸壳,也可以使用&lt;a href=&quot;https://github.com/KJCracks/Clutch&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;clutch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;注意要砸壳的iOS系统版本,即iOS版本需要与SDK版本相同。注意，5.1版SDK编译出的dylib是向下兼容的，可以用于iOS5.0&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;修改MakeFile和修改源码 ,make文件中SDK=&lt;code&gt;xcrun --sdk iphoneos --show-sdk-path&lt;/code&gt; 改成SDK=指定SDK文件目录~/SDKs/iPhoneOS8.X.sdk&lt;br&gt;修改 dumpdecrypted.c第76行的if (lc-&amp;gt;cmd ==LC_ENCRYPTION_INFO || lc-&amp;gt;cmd == LC_ENCRYPTION_INFO_64) 改成 if(lc-&amp;gt;cmd == LC_ENCRYPTION_INFO)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;cd ~dumpdecrypted-master/ 输入make 编译&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;cp dumpdecrypted.dylib放到越狱手机iOS砸壳app的Document下进入Document目录 输入 DYLD_INSERT_LIBRARIES=dumpdecrypted.dylib /var/mobile/Applications/XXXXXX/XXXX.app/XXXX 进行砸壳&lt;br&gt;随后会在Document 目录下会生成 XXXXXX.decrypted, 然后scp 到电脑上备用.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;准备-dylib-动态链接库&quot;&gt;&lt;a href=&quot;#准备-dylib-动态链接库&quot; class=&quot;headerlink&quot; title=&quot;准备 dylib 动态链接库&quot;&gt;&lt;/a&gt;准备 dylib 动态链接库&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;使用theos make 出的 dylib文件 位置在.theos/obj/debug/xxx.dylib 中  &lt;/li&gt;
+&lt;li&gt;检查依赖项确保将所有的依赖库都打包进 ipa 当中,otool -L xxxxx.dylib,如果是在非越狱手上安装一定要一个 &lt;a href=&quot;http://security.ios-wiki.com/issue-7-1/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;libsubstrate.dylib&lt;/a&gt;,这个就要打包到IPA文件中,我们将 libsubstrate.dylib 拷出，使用 install_name_tool 命令修改动态库的路径，指向 app 二进制文件的同级目录&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$install_name_tool -change /usr/lib/libsubstrate.dylib @loader_path/libsubstrate.dylib xxxx.dylib&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;将动态链接库注入二进制文件中&quot;&gt;&lt;a href=&quot;#将动态链接库注入二进制文件中&quot; class=&quot;headerlink&quot; title=&quot;将动态链接库注入二进制文件中&quot;&gt;&lt;/a&gt;将动态链接库注入二进制文件中&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;准备工具开源的 &lt;a href=&quot;https://github.com/alexzielenski/optool&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;optool&lt;/a&gt; 工具&lt;br&gt;因为 optool 添加了 submodule，因为需要使用 –recuresive 选项，将子模块全部 clone 下来 ,不过有时候可以有目录问题下载不下来, &lt;a href=&quot;www.baidu.com&quot;&gt;这里&lt;/a&gt;有一个集成好的工程 下载后可以直接编译,如果编译有问题&lt;a href=&quot;http://www.mopsled.com/2016/build-optool-osx/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$xcodebuild -project optool.xcodeproj -configuration Release ARCHS=&amp;quot;x86_64&amp;quot; build&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;复制所需要的依赖库和自定义动态库到脱过壳的APP中&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$cp libsubstrate.dylib xxxx.dylib 到 ~/Payload/xxx.app&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;注入动态库&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$/path/to/optool install -c load -p &amp;quot;@executable_path/WeChatRedEnvelop.dylib&amp;quot; -t wechat/Payload/WeChat.app/WeChat&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;打包并重签名&quot;&gt;&lt;a href=&quot;#打包并重签名&quot; class=&quot;headerlink&quot; title=&quot;打包并重签名&quot;&gt;&lt;/a&gt;打包并重签名&lt;/h4&gt;&lt;p&gt;打包 ipa 与重签名可以直接使用图形化工具 &lt;a href=&quot;https://github.com/DanTheMan827/ios-app-signer&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ios-app-signer&lt;/a&gt; 来完成。如果喜欢用命令行的它也支持命令行.&lt;/p&gt;
+&lt;h4 id=&quot;安装ipa&quot;&gt;&lt;a href=&quot;#安装ipa&quot; class=&quot;headerlink&quot; title=&quot;安装ipa&quot;&gt;&lt;/a&gt;安装ipa&lt;/h4&gt;&lt;p&gt;可以使用同步助手,xcode,ideviceinstaller 等工具进行安装.&lt;/p&gt;
+&lt;h4 id=&quot;扩展阅读&quot;&gt;&lt;a href=&quot;#扩展阅读&quot; class=&quot;headerlink&quot; title=&quot;扩展阅读&quot;&gt;&lt;/a&gt;扩展阅读&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://www.cycript.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Cycript&lt;/a&gt;是由Cydia创始人Saurik推出的一款脚本语言，Cycript 混合了Objective-C与javascript语法的解释器 ,cycript 也是一款很强大的cydia 插件，使用它我们可以测试一些函数的功能，去窥探一些程序的结构，动态调试程序&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;电脑上要安装的工具&lt;br&gt;class_dump&lt;br&gt;Theos&lt;br&gt;Hopper Disassembler v3&lt;br&gt;MachOView&lt;br&gt;xcode&lt;br&gt;insert_dylib&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;远程ssh 到iphone ssh root@192.168.1.5 pwd:alpine&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;找到指定应用 PID&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ps -ef |grep WeChat&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;查看主程序加密情况cryptid 1代表加密，cryptid 0代表未加密。两个分别对应着armv7和arm64.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;otool -l Mach-O文件名 | grep crypt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;armv7抽取处理&lt;br&gt;lipo XXXX -thin armv7 -output XXXX_armv7&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用class-dump-z &lt;a href=&quot;http://networkpx.googlecode.com/files/class-dump-z_0.2a.tar.gz下&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt; ,&lt;a href=&quot;http://security.ios-wiki.com/issue-3-5/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考获得iOS应用程序的类信息&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;class-dump-z -H AppName/Payload/AppName.app/AppName -o storeheaders&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;查看自己的证书Teamid及其他信息&lt;br&gt;./ldid -e ./Demo.app/demo&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Mach-O&lt;br&gt;(趣探 Mach-O：文件格式分析)[&lt;a href=&quot;http://www.jianshu.com/p/54d842db3f69&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.jianshu.com/p/54d842db3f69&lt;/a&gt;]&lt;br&gt;(了解iOS上的可执行文件和Mach-O格式)[&lt;a href=&quot;http://www.cocoachina.com/mac/20150122/10988.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cocoachina.com/mac/20150122/10988.html&lt;/a&gt;]&lt;br&gt;&lt;a href=&quot;http://opensource.apple.com/source/security_systemkeychain/security_systemkeychain-55105/src/cs_dump.cpp&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://opensource.apple.com/source/security_systemkeychain/security_systemkeychain-55105/src/cs_dump.cpp&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;TheOS的安装和使用&quot;&gt;&lt;a href=&quot;#TheOS的安装和使用&quot; class=&quot;headerlink&quot; title=&quot;TheOS的安装和使用&quot;&gt;&lt;/a&gt;TheOS的安装和使用&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;安装TheOS&lt;br&gt;@see &lt;a href=&quot;https://github.com/theos/theos/wiki/Installation&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/theos/theos/wiki/Installation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;- export THEOS=/opt/theos&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- git clone https://github.com/DHowett/theos $THEOS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- sudo git clone http://svn.howett.net/svn/theos/trunk $THEOS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo curl -s http://dl.dropbox.com/u/3157793/ldid &amp;gt; /tmp/ldid&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo cp /tmp/ldid $THEOS/bin/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo chmod +x $THEOS/bin/ldid&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;rm /tmp/ldid&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;使用TheOS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;创建工程&lt;br&gt;$THEOS/bin/nic.pl&lt;/p&gt;
+&lt;p&gt;提示输出如下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;NIC 2.0 - New Instance Creator&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;------------------------------&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [1.] iphone/activator_event&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [2.] iphone/application_modern&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [3.] iphone/cydget&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [4.] iphone/flipswitch_switch&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [5.] iphone/framework&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [6.] iphone/ios7_notification_center_widget&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [7.] iphone/library&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [8.] iphone/notification_center_widget&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [9.] iphone/preference_bundle_modern&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [10.] iphone/tool&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [11.] iphone/tweak&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  [12.] iphone/xpc_service&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安装打包插件步骤&lt;br&gt;1,cd 工程目录&lt;br&gt;2,make&lt;br&gt;3,make package&lt;br&gt;4,make install&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&amp;amp;mid=2653577384&amp;amp;idx=1&amp;amp;sn=b44a9c9651bf09c5bea7e0337031c53c&amp;amp;scene=0#wechat_redirect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;移动App入侵与逆向破解技术－iOS篇&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/yohunl/DingTalkNoJailTweak&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DingTalkNoJailTweak&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/buginux/WeChatRedEnvelop&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;免越狱版 iOS 抢红包插件&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.jianshu.com/p/c9d3b13044d3&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;optool 编译&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;脱壳&quot;&gt;&lt;a href=&quot;#脱壳&quot; class=&quot;headerlink&quot; title=&quot;脱壳&quot;&gt;&lt;/a&gt;脱壳&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;使用&lt;a href=&quot;https://github.com/ianisme/IANDecryptiOSApp/tree/mast
+    
+    </summary>
+    
+      <category term="逆向破解" scheme="http://jsonwang.github.io/categories/%E9%80%86%E5%90%91%E7%A0%B4%E8%A7%A3/"/>
+    
+    
+      <category term="dumpdecrypted" scheme="http://jsonwang.github.io/tags/dumpdecrypted/"/>
+    
+      <category term="theos" scheme="http://jsonwang.github.io/tags/theos/"/>
+    
+      <category term="optool" scheme="http://jsonwang.github.io/tags/optool/"/>
+    
+      <category term="逆向破解技术" scheme="http://jsonwang.github.io/tags/%E9%80%86%E5%90%91%E7%A0%B4%E8%A7%A3%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>macOS-Sierra编译安装libimobiledevice</title>

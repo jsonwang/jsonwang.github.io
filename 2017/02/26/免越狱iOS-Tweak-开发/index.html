@@ -1,0 +1,780 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="dumpdecrypted,theos,optool,逆向破解技术," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="AK的园子" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="脱壳
+使用dumpdecrypted工具 砸壳,也可以使用clutch
+注意要砸壳的iOS系统版本,即iOS版本需要与SDK版本相同。注意，5.1版SDK编译出的dylib是向下兼容的，可以用于iOS5.0
+修改MakeFile和修改源码 ,make文件中SDK=xcrun --sdk iphoneos --show-sdk-path 改成SDK=指定SDK文件目录~/SDKs/iPhoneOS8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="免越狱iOS Tweak 开发">
+<meta property="og:url" content="http://jsonwang.github.io/2017/02/26/免越狱iOS-Tweak-开发/index.html">
+<meta property="og:site_name" content="AK的园子">
+<meta property="og:description" content="脱壳
+使用dumpdecrypted工具 砸壳,也可以使用clutch
+注意要砸壳的iOS系统版本,即iOS版本需要与SDK版本相同。注意，5.1版SDK编译出的dylib是向下兼容的，可以用于iOS5.0
+修改MakeFile和修改源码 ,make文件中SDK=xcrun --sdk iphoneos --show-sdk-path 改成SDK=指定SDK文件目录~/SDKs/iPhoneOS8">
+<meta property="og:updated_time" content="2017-02-25T16:08:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="免越狱iOS Tweak 开发">
+<meta name="twitter:description" content="脱壳
+使用dumpdecrypted工具 砸壳,也可以使用clutch
+注意要砸壳的iOS系统版本,即iOS版本需要与SDK版本相同。注意，5.1版SDK编译出的dylib是向下兼容的，可以用于iOS5.0
+修改MakeFile和修改源码 ,make文件中SDK=xcrun --sdk iphoneos --show-sdk-path 改成SDK=指定SDK文件目录~/SDKs/iPhoneOS8">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 免越狱iOS Tweak 开发 | AK的园子 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">AK的园子</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">王道无愧华夏心，成功都是拼搏勤。无视对手傲乾坤，敌对双目霸镇魂！</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                免越狱iOS Tweak 开发
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-26T00:05:44+08:00" content="2017-02-26">
+              2017-02-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/逆向破解/" itemprop="url" rel="index">
+                    <span itemprop="name">逆向破解</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/26/免越狱iOS-Tweak-开发/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/26/免越狱iOS-Tweak-开发/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/02/26/免越狱iOS-Tweak-开发/" class="leancloud_visitors" data-flag-title="免越狱iOS Tweak 开发">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="脱壳"><a href="#脱壳" class="headerlink" title="脱壳"></a>脱壳</h4><ul>
+<li>使用<a href="https://github.com/ianisme/IANDecryptiOSApp/tree/master/dumpdecrypted" target="_blank" rel="external">dumpdecrypted工具</a> 砸壳,也可以使用<a href="https://github.com/KJCracks/Clutch" target="_blank" rel="external">clutch</a></li>
+<li>注意要砸壳的iOS系统版本,即iOS版本需要与SDK版本相同。注意，5.1版SDK编译出的dylib是向下兼容的，可以用于iOS5.0</li>
+<li><p>修改MakeFile和修改源码 ,make文件中SDK=<code>xcrun --sdk iphoneos --show-sdk-path</code> 改成SDK=指定SDK文件目录~/SDKs/iPhoneOS8.X.sdk<br>修改 dumpdecrypted.c第76行的if (lc-&gt;cmd ==LC_ENCRYPTION_INFO || lc-&gt;cmd == LC_ENCRYPTION_INFO_64) 改成 if(lc-&gt;cmd == LC_ENCRYPTION_INFO)</p>
+</li>
+<li><p>cd ~dumpdecrypted-master/ 输入make 编译</p>
+</li>
+<li>cp dumpdecrypted.dylib放到越狱手机iOS砸壳app的Document下进入Document目录 输入 DYLD_INSERT_LIBRARIES=dumpdecrypted.dylib /var/mobile/Applications/XXXXXX/XXXX.app/XXXX 进行砸壳<br>随后会在Document 目录下会生成 XXXXXX.decrypted, 然后scp 到电脑上备用.</li>
+</ul>
+<h4 id="准备-dylib-动态链接库"><a href="#准备-dylib-动态链接库" class="headerlink" title="准备 dylib 动态链接库"></a>准备 dylib 动态链接库</h4><ul>
+<li>使用theos make 出的 dylib文件 位置在.theos/obj/debug/xxx.dylib 中  </li>
+<li>检查依赖项确保将所有的依赖库都打包进 ipa 当中,otool -L xxxxx.dylib,如果是在非越狱手上安装一定要一个 <a href="http://security.ios-wiki.com/issue-7-1/" target="_blank" rel="external">libsubstrate.dylib</a>,这个就要打包到IPA文件中,我们将 libsubstrate.dylib 拷出，使用 install_name_tool 命令修改动态库的路径，指向 app 二进制文件的同级目录<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$install_name_tool -change /usr/lib/libsubstrate.dylib @loader_path/libsubstrate.dylib xxxx.dylib</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="将动态链接库注入二进制文件中"><a href="#将动态链接库注入二进制文件中" class="headerlink" title="将动态链接库注入二进制文件中"></a>将动态链接库注入二进制文件中</h4><ul>
+<li><p>准备工具开源的 <a href="https://github.com/alexzielenski/optool" target="_blank" rel="external">optool</a> 工具<br>因为 optool 添加了 submodule，因为需要使用 –recuresive 选项，将子模块全部 clone 下来 ,不过有时候可以有目录问题下载不下来, <a href="www.baidu.com">这里</a>有一个集成好的工程 下载后可以直接编译,如果编译有问题<a href="http://www.mopsled.com/2016/build-optool-osx/" target="_blank" rel="external">参考</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$xcodebuild -project optool.xcodeproj -configuration Release ARCHS=&quot;x86_64&quot; build</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>复制所需要的依赖库和自定义动态库到脱过壳的APP中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$cp libsubstrate.dylib xxxx.dylib 到 ~/Payload/xxx.app</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注入动态库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$/path/to/optool install -c load -p &quot;@executable_path/WeChatRedEnvelop.dylib&quot; -t wechat/Payload/WeChat.app/WeChat</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="打包并重签名"><a href="#打包并重签名" class="headerlink" title="打包并重签名"></a>打包并重签名</h4><p>打包 ipa 与重签名可以直接使用图形化工具 <a href="https://github.com/DanTheMan827/ios-app-signer" target="_blank" rel="external">ios-app-signer</a> 来完成。如果喜欢用命令行的它也支持命令行.</p>
+<h4 id="安装ipa"><a href="#安装ipa" class="headerlink" title="安装ipa"></a>安装ipa</h4><p>可以使用同步助手,xcode,ideviceinstaller 等工具进行安装.</p>
+<h4 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h4><ul>
+<li><p><a href="http://www.cycript.org/" target="_blank" rel="external">Cycript</a>是由Cydia创始人Saurik推出的一款脚本语言，Cycript 混合了Objective-C与javascript语法的解释器 ,cycript 也是一款很强大的cydia 插件，使用它我们可以测试一些函数的功能，去窥探一些程序的结构，动态调试程序</p>
+</li>
+<li><p>电脑上要安装的工具<br>class_dump<br>Theos<br>Hopper Disassembler v3<br>MachOView<br>xcode<br>insert_dylib</p>
+</li>
+<li>远程ssh 到iphone ssh root@192.168.1.5 pwd:alpine</li>
+<li><p>找到指定应用 PID</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef |grep WeChat</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看主程序加密情况cryptid 1代表加密，cryptid 0代表未加密。两个分别对应着armv7和arm64.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">otool -l Mach-O文件名 | grep crypt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>armv7抽取处理<br>lipo XXXX -thin armv7 -output XXXX_armv7</p>
+</li>
+<li><p>使用class-dump-z <a href="http://networkpx.googlecode.com/files/class-dump-z_0.2a.tar.gz下" target="_blank" rel="external">下载地址</a> ,<a href="http://security.ios-wiki.com/issue-3-5/" target="_blank" rel="external">参考获得iOS应用程序的类信息</a></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class-dump-z -H AppName/Payload/AppName.app/AppName -o storeheaders</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>查看自己的证书Teamid及其他信息<br>./ldid -e ./Demo.app/demo</p>
+</li>
+<li><p>Mach-O<br>(趣探 Mach-O：文件格式分析)[<a href="http://www.jianshu.com/p/54d842db3f69" target="_blank" rel="external">http://www.jianshu.com/p/54d842db3f69</a>]<br>(了解iOS上的可执行文件和Mach-O格式)[<a href="http://www.cocoachina.com/mac/20150122/10988.html" target="_blank" rel="external">http://www.cocoachina.com/mac/20150122/10988.html</a>]<br><a href="http://opensource.apple.com/source/security_systemkeychain/security_systemkeychain-55105/src/cs_dump.cpp" target="_blank" rel="external">http://opensource.apple.com/source/security_systemkeychain/security_systemkeychain-55105/src/cs_dump.cpp</a></p>
+</li>
+</ul>
+<h4 id="TheOS的安装和使用"><a href="#TheOS的安装和使用" class="headerlink" title="TheOS的安装和使用"></a>TheOS的安装和使用</h4><ul>
+<li>安装TheOS<br>@see <a href="https://github.com/theos/theos/wiki/Installation" target="_blank" rel="external">https://github.com/theos/theos/wiki/Installation</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- export THEOS=/opt/theos</span><br><span class="line">- git clone https://github.com/DHowett/theos $THEOS</span><br><span class="line">- sudo git clone http://svn.howett.net/svn/theos/trunk $THEOS</span><br><span class="line"></span><br><span class="line">sudo curl -s http://dl.dropbox.com/u/3157793/ldid &gt; /tmp/ldid</span><br><span class="line">sudo cp /tmp/ldid $THEOS/bin/</span><br><span class="line">sudo chmod +x $THEOS/bin/ldid</span><br><span class="line">rm /tmp/ldid</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用TheOS</li>
+</ul>
+<p>创建工程<br>$THEOS/bin/nic.pl</p>
+<p>提示输出如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">NIC 2.0 - New Instance Creator</span><br><span class="line">------------------------------</span><br><span class="line">  [1.] iphone/activator_event</span><br><span class="line">  [2.] iphone/application_modern</span><br><span class="line">  [3.] iphone/cydget</span><br><span class="line">  [4.] iphone/flipswitch_switch</span><br><span class="line">  [5.] iphone/framework</span><br><span class="line">  [6.] iphone/ios7_notification_center_widget</span><br><span class="line">  [7.] iphone/library</span><br><span class="line">  [8.] iphone/notification_center_widget</span><br><span class="line">  [9.] iphone/preference_bundle_modern</span><br><span class="line">  [10.] iphone/tool</span><br><span class="line">  [11.] iphone/tweak</span><br><span class="line">  [12.] iphone/xpc_service</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>安装打包插件步骤<br>1,cd 工程目录<br>2,make<br>3,make package<br>4,make install</li>
+</ul>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ul>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&amp;mid=2653577384&amp;idx=1&amp;sn=b44a9c9651bf09c5bea7e0337031c53c&amp;scene=0#wechat_redirect" target="_blank" rel="external">移动App入侵与逆向破解技术－iOS篇</a></li>
+<li><a href="https://github.com/yohunl/DingTalkNoJailTweak" target="_blank" rel="external">DingTalkNoJailTweak</a><br><a href="https://github.com/buginux/WeChatRedEnvelop" target="_blank" rel="external">免越狱版 iOS 抢红包插件</a><br><a href="http://www.jianshu.com/p/c9d3b13044d3" target="_blank" rel="external">optool 编译</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/dumpdecrypted/" rel="tag">#dumpdecrypted</a>
+          
+            <a href="/tags/theos/" rel="tag">#theos</a>
+          
+            <a href="/tags/optool/" rel="tag">#optool</a>
+          
+            <a href="/tags/逆向破解技术/" rel="tag">#逆向破解技术</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/11/macOS-Sierra编译安装libimobiledevice/" rel="next" title="macOS-Sierra编译安装libimobiledevice">
+                <i class="fa fa-chevron-left"></i> macOS-Sierra编译安装libimobiledevice
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/26/免越狱iOS-Tweak-开发/"
+           data-title="免越狱iOS Tweak 开发" data-url="http://jsonwang.github.io/2017/02/26/免越狱iOS-Tweak-开发/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="AK" />
+          <p class="site-author-name" itemprop="name">AK</p>
+          <p class="site-description motion-element" itemprop="description">iOS 开发者</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#脱壳"><span class="nav-number">1.</span> <span class="nav-text">脱壳</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#准备-dylib-动态链接库"><span class="nav-number">2.</span> <span class="nav-text">准备 dylib 动态链接库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将动态链接库注入二进制文件中"><span class="nav-number">3.</span> <span class="nav-text">将动态链接库注入二进制文件中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打包并重签名"><span class="nav-number">4.</span> <span class="nav-text">打包并重签名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装ipa"><span class="nav-number">5.</span> <span class="nav-text">安装ipa</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展阅读"><span class="nav-number">6.</span> <span class="nav-text">扩展阅读</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TheOS的安装和使用"><span class="nav-number">7.</span> <span class="nav-text">TheOS的安装和使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考"><span class="nav-number">8.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AK</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"beijingak"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("BiPcHCcdJIEYf3zrGoXJMq2B-gzGzoHsz", "mdJ0sq1UkM7cKzD7jHcKtqk6");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
