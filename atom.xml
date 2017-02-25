@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jsonwang.github.io/"/>
-  <updated>2017-02-25T16:15:42.000Z</updated>
+  <updated>2017-02-25T16:16:50.000Z</updated>
   <id>http://jsonwang.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://jsonwang.github.io/2017/02/26/%E5%85%8D%E8%B6%8A%E7%8B%B1iOS-Tweak-%E5%BC%80%E5%8F%91/"/>
     <id>http://jsonwang.github.io/2017/02/26/免越狱iOS-Tweak-开发/</id>
     <published>2017-02-25T16:05:44.000Z</published>
-    <updated>2017-02-25T16:15:42.000Z</updated>
+    <updated>2017-02-25T16:16:50.000Z</updated>
     
-    <content type="html">&lt;h4 id=&quot;脱壳&quot;&gt;&lt;a href=&quot;#脱壳&quot; class=&quot;headerlink&quot; title=&quot;脱壳&quot;&gt;&lt;/a&gt;脱壳&lt;/h4&gt;&lt;hr&gt;
+    <content type="html">&lt;h4 id=&quot;脱壳&quot;&gt;&lt;a href=&quot;#脱壳&quot; class=&quot;headerlink&quot; title=&quot;脱壳&quot;&gt;&lt;/a&gt;脱壳&lt;/h4&gt;&lt;p&gt;_&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;使用&lt;a href=&quot;https://github.com/ianisme/IANDecryptiOSApp/tree/master/dumpdecrypted&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;dumpdecrypted工具&lt;/a&gt; 砸壳,也可以使用&lt;a href=&quot;https://github.com/KJCracks/Clutch&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;clutch&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;注意要砸壳的iOS系统版本,即iOS版本需要与SDK版本相同。注意，5.1版SDK编译出的dylib是向下兼容的，可以用于iOS5.0&lt;/li&gt;
@@ -97,9 +97,9 @@
     
     <summary type="html">
     
-      &lt;h4 id=&quot;脱壳&quot;&gt;&lt;a href=&quot;#脱壳&quot; class=&quot;headerlink&quot; title=&quot;脱壳&quot;&gt;&lt;/a&gt;脱壳&lt;/h4&gt;&lt;hr&gt;
+      &lt;h4 id=&quot;脱壳&quot;&gt;&lt;a href=&quot;#脱壳&quot; class=&quot;headerlink&quot; title=&quot;脱壳&quot;&gt;&lt;/a&gt;脱壳&lt;/h4&gt;&lt;p&gt;_&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;使用&lt;a href=&quot;https://github.com/ianisme/IANDecryptiOSApp/tree
+&lt;li&gt;使用&lt;a href=&quot;https://github.com/ianisme/IANDecryptiOSApp/
     
     </summary>
     
